@@ -18,6 +18,13 @@ export default function Home() {
         console.log('Обновление strengthImport:', strengthImport);
     }, [strengthImport]); // Зависимость от strengthImport
 
+    const requirementsArray = String(requirementsItem).split(' ');
+    console.log(requirementsArray[0]);
+
+    if (strengthImport < Number(requirementsArray[0])) {
+        console.log("Not enough strength")
+    }
+
     return (
         <>
             <CharacterRedactor strengthImport={strengthImport}
