@@ -88,6 +88,25 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/falchion.png", name: "Falchion"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/quelaags_furysword_1.png", name: "Quelaag's Furysword"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/painting_guardian_sword.png", name: "Painting Guardian Sword"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/jagged_ghost_blade.png", name: "Jagged Ghost Blade"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Gold%20Tracer.png", name: "Gold Tracer"},
+            ]
+        },
+        {
+            name: "Katanas",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/uchigatana.png", name: "Uchigatana"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/washing_pole.png", name: "Washing Pole"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/iaito.png", name: "Iaito"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/chaos_blade_1.png", name: "Chaos Blade"},
+            ]
+        },
+        {
+            name: "Curved Greatswords",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/server.png", name: "Server"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/murakumo.png", name: "Murakumo"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/gravelord_sword.png", name: "Gravelord Sword"},
             ]
         }
     ];
