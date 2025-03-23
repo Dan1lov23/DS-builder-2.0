@@ -8,7 +8,7 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
             // метод flatmap дя правильной реализации механизама поиска нужного предмеьта раздела weapon
             const weapon = weaponsTypes.flatMap(type => type.weapons).find(weapon => weapon.name === name);
             const newItem = { src, name, minStrength: weapon.minStrength, minDexterity: weapon.minDexterity, minIntelligence: weapon.minIntelligence, minFaith: weapon.minFaith};
-            const requirements = [`Strength - ${newItem.minStrength}, Dexterity - ${newItem.minDexterity}, Intelligence - ${newItem.minIntelligence}, Faith - ${newItem.minFaith}`]
+            const requirements = [`${newItem.minStrength} ${newItem.minDexterity} ${newItem.minIntelligence} ${newItem.minFaith}`]
             //console.log(requirements);
             setUserItem([...userItem, newItem]);
             requirementsItem = requirements;
@@ -73,7 +73,10 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
         {
             name: "Ultra Greatswords",
             weapons: [
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png", name: "Dragon Greatsword"},
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png", name: "Dragon Greatsword",
+                    minStrength: 50, minDexterity: 10, minFaith: 0, minIntelligence: 0
+                },
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/greatsword.png", name: "Great Greatsword"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/black_knight_greatsword.png", name: "Black knight greatsword"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/zweihander.png", name: "Zweihander"},
