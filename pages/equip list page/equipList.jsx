@@ -108,6 +108,51 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/murakumo.png", name: "Murakumo"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/gravelord_sword.png", name: "Gravelord Sword"},
             ]
+        },
+        {
+            name: "Piercing Swords",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/rapier.png", name: "Rapier"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/estoc.png", name: "Estoc"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/mail_breaker.png", name: "Mail Breaker"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/ricards_rapier.png", name: "Ricard Rapier"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/velkas_rapier.png", name: "Velka's Rapier"},
+            ]
+        },
+        {
+            name: "Axes",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/hand_axe.png", name: "Hand Axes"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/gargoyle_tail_axe.png", name: "Gargoy Tail Axe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/battle_axe.png", name: "Battle Axe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/butcher_knife.png", name: "Butcher Kinder"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/crescent_axe.png", name: "Crescent Axe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/golem_axe_1.png", name: "Golem Axe"},
+            ]
+        },
+        {
+            name: "Great Axes",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/demons_greataxe.png", name: "Demons Greataxe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/greataxe.png", name: "Greataxe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_king_greataxe.png", name: "Dragon King Greataxe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/black_knight_greataxe.png", name: "Black knight Greataxe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Stone%20Greataxe.png", name: "Stone%20Greataxe"},
+            ]
+        },
+        {
+            name: "Hammers",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Club.png", name: "Club"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/reinforced_club.png", name: "Reinforced Club"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/mace.png", name: "Mace"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/morning_star.png", name: "Morning Star"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/warpick.png", name: "Warpick"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/pickaxe.png", name: "Pickaxe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/blacksmith_hammer.png", name: "Blacksmith Hammer"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/blacksmith_giant_hammer.png", name: "Blacksmith_giant_hammer"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/hammer_of_vamos.png", name: "Hammer of Vamos"},
+            ]
         }
     ];
 

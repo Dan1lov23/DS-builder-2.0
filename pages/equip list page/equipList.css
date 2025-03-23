@@ -13,7 +13,7 @@
 
 .equipListContainer {
     display: grid;
-    grid-template-columns: repeat(3, 162px);
+    grid-template-columns: repeat(4, 212px);
     justify-content: center;
     align-items: center;
     a {
@@ -50,4 +50,3 @@
     text-align: center;
     margin: 50px;
 }
-
