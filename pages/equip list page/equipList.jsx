@@ -156,6 +156,36 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/blacksmith_giant_hammer.png", name: "Blacksmith_giant_hammer"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/hammer_of_vamos.png", name: "Hammer of Vamos"},
             ]
+        },
+        {
+            name: "Fist & Claw",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/caestus.png", name: "Caestus"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/claw.png", name: "Claws"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_bone_fist_1.png", name: "Dragon Bone Fist"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dark_hand.png", name: "Dark Hand"},
+            ]
+        },
+        {
+            name: "Spears",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/spear.png", name: "Spear"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/winged_spear.png", name: "Winged Spear"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/demons_spear.png", name: "Demon's Spear"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/pike.png", name: "Pike"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragonslayer_spear_9.png", name: "Dragonslayer Spear"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/partizan.png", name: "Partizan"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/channelers_trident.png", name: "Channelers Trident"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/silver_knight_spear.png", name: "Silver knight Spear"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/moonlight_butterfly_horn_9.png", name: "Moonlight Butterfly Hron"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Four-pronged%20Plow.png", name: "Four-pronged low"},
+            ]
+        },
+        {
+            name: "Halberds",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/halberd.png", name: "Halberd"},
+            ]
         }
     ];
 
