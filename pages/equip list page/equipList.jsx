@@ -69,6 +69,26 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Abyss%20Greatsword.png", name: "Abyss Greatsword"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Obsidian%20Greatsword.png", name: "Obsidian Greatsword"},
             ]
+        },
+        {
+            name: "Ultra Greatswords",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png", name: "Dragon Greatsword"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/greatsword.png", name: "Great Greatsword"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/black_knight_greatsword.png", name: "Black knight greatsword"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/zweihander.png", name: "Zweihander"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/demon_great_machete.png", name: "Demon Great Machete"}
+            ]
+        },
+        {
+            name: "Curved Swords",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/scimitar.png", name: "Scimitar"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/shotel.png", name: "Shotel"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/falchion.png", name: "Falchion"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/quelaags_furysword_1.png", name: "Quelaag's Furysword"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/painting_guardian_sword.png", name: "Painting Guardian Sword"},
+            ]
         }
     ];
 
