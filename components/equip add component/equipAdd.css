@@ -8,7 +8,7 @@
 .equipAddContainer {
     display: grid;
     margin-top: 10px;
-    grid-template-columns: repeat(5, 182px);
+    grid-template-columns: repeat(5, 212px);
     text-align: center;
     .deleteButton {
         margin-top: 20px;
@@ -32,12 +32,18 @@
     }
 }
 
-h1 {
-    color: white;
+.requirementsMainTitle {
+    h1 {
+        color: white;
+    }
 }
 
 .requirementsMain {
     display: grid;
-    grid-template-columns: repeat(3, 110px);
+    grid-template-columns: repeat(3, 60px);
     margin-left: 38px;
+    img {
+        width: 40px;
+        height: 40px;
+    }
 }
