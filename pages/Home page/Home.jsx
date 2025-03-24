@@ -6,7 +6,12 @@ import { useState, useEffect } from "react";
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
     const [requirementsItem, setRequirementsItem] = useState([]);
-    const [strengthImport, setStrengthImport] = useState(10); // Изменено на 10 вместо массива
+
+    // имопртируем статы из компонента редактор
+
+    const [strengthImport, setStrengthImport] = useState(10);
+    const [dexterityImport, setDexterityImport] = useState(10);
+
 
     // Функция для удаления элемента
     const removeItem = (index) => {
@@ -18,17 +23,27 @@ export default function Home() {
         console.log('Обновление strengthImport:', strengthImport);
     }, [strengthImport]); // Зависимость от strengthImport
 
+    useEffect(() => {
+        console.log('Обновление dexterityImport:', dexterityImport);
+    }, [dexterityImport]); // Зависимость от strengthImport
+
     const requirementsArray = String(requirementsItem).split(' ');
     console.log(requirementsArray[0]);
 
     if (strengthImport < Number(requirementsArray[0])) {
         console.log("Not enough strength")
+    } else if (dexterityImport < Number(requirementsArray[1])) {
+        console.log("Not enough dexterity")
     }
 
     return (
         <>
-            <CharacterRedactor strengthImport={strengthImport}
-                               setStrengthImport={setStrengthImport}/>
+            <CharacterRedactor
+                strengthImport={strengthImport}
+                setStrengthImport={setStrengthImport}
+                dexterityImport={dexterityImport}
+                setDexterityImport={setDexterityImport}
+            />
             <EquipAdd userItem={userItem} removeItem={(index) => {
                 const newItems = userItem.filter((_, i) => i !== index);
                 setUserItem(newItems);
