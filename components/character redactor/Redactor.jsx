@@ -5,7 +5,8 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
 import {useState} from "react";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport,
+                                              intelligenceImport, setIntelligenceImport, faithImport, setFaithImport}) {
 
     const [level, setLevel] = useState(1);
     const [vitality, setVitality] = useState(10);
@@ -178,12 +179,19 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     // дальше это будет применяться в модуле сравнение требований показателей оружия
     // и показаелей персонажа
 
+    // импррт статов в главный компонент Home
 
     strengthImport = strength;
     setStrengthImport(strengthImport);
 
     dexterityImport = dexterity;
     setDexterityImport(dexterityImport);
+
+    intelligenceImport = intelligence;
+    setIntelligenceImport(intelligenceImport);
+
+    faithImport = faith;
+    setFaithImport(faithImport);
 
     return (
         <>

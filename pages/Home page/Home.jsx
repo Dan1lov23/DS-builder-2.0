@@ -11,7 +11,8 @@ export default function Home() {
 
     const [strengthImport, setStrengthImport] = useState(10);
     const [dexterityImport, setDexterityImport] = useState(10);
-
+    const [intelligenceImport, setIntelligenceImport] = useState(10);
+    const [faithImport, setFaithImport] = useState(10);
 
     // Функция для удаления элемента
     const removeItem = (index) => {
@@ -32,8 +33,18 @@ export default function Home() {
 
     if (strengthImport < Number(requirementsArray[0])) {
         console.log("Not enough strength")
-    } else if (dexterityImport < Number(requirementsArray[1])) {
+    }
+
+    if (dexterityImport < Number(requirementsArray[1])) {
         console.log("Not enough dexterity")
+    }
+
+    if (intelligenceImport < Number(requirementsArray[2])) {
+        console.log("Not enough intelligence")
+    }
+
+    if (faithImport < Number(requirementsArray[3])) {
+        console.log("Not enough faith")
     }
 
     return (
@@ -41,8 +52,15 @@ export default function Home() {
             <CharacterRedactor
                 strengthImport={strengthImport}
                 setStrengthImport={setStrengthImport}
+
                 dexterityImport={dexterityImport}
                 setDexterityImport={setDexterityImport}
+
+                intelligenceImport={intelligenceImport}
+                setIntelligenceImport={setIntelligenceImport}
+
+                faithImport={faithImport}
+                setFaithImport={setFaithImport}
             />
             <EquipAdd userItem={userItem} removeItem={(index) => {
                 const newItems = userItem.filter((_, i) => i !== index);
