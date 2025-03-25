@@ -50,3 +50,36 @@
     text-align: center;
     margin: 50px;
 }
+
+@media (max-width: 480px) {
+    .equipListMainTitle {
+        text-align: center;
+        font-size: 16px;
+        h1 {
+            font-family: Pompadur
+        }
+    }
+    .equipListContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 102px);
+        justify-content: center;
+        align-items: center;
+        a {
+            text-decoration: none;
+            color: yellow;
+        }
+        a:hover {
+            color: Gold;
+        }
+    }
+    .weaponMain {
+        font-size: 12px;
+        margin-top: 50px;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.2s;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
