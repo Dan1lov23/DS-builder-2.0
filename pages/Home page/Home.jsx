@@ -7,8 +7,7 @@ export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
     const [requirementsItem, setRequirementsItem] = useState([]);
 
-    // имопртируем статы из компонента редактор
-
+    // Импортируем статы из компонента редактор
     const [strengthImport, setStrengthImport] = useState(10);
     const [dexterityImport, setDexterityImport] = useState(10);
     const [intelligenceImport, setIntelligenceImport] = useState(10);
@@ -22,30 +21,38 @@ export default function Home() {
     // Печать strengthImport при его обновлении
     useEffect(() => {
         console.log('Обновление strengthImport:', strengthImport);
-    }, [strengthImport]); // Зависимость от strengthImport
+    }, [strengthImport]);
 
     useEffect(() => {
         console.log('Обновление dexterityImport:', dexterityImport);
-    }, [dexterityImport]); // Зависимость от strengthImport
+    }, [dexterityImport]);
 
-    const requirementsArray = String(requirementsItem).split(' ');
-    console.log(requirementsArray[0]);
+    useEffect(() => {
+        console.log('Обновление intelligenceImport:', intelligenceImport);
+    }, [intelligenceImport]);
 
-    if (strengthImport < Number(requirementsArray[0])) {
-        console.log("Not enough strength")
-    }
+    useEffect(() => {
+        console.log('Обновление faithImport:', faithImport);
+    }, [faithImport]);
 
-    if (dexterityImport < Number(requirementsArray[1])) {
-        console.log("Not enough dexterity")
-    }
+    // Проверка требований для каждого элемента
+    userItem.forEach(item => {
+        if (strengthImport < item.minStrength) {
+            console.log("Not enough strength for", item.name);
+        }
 
-    if (intelligenceImport < Number(requirementsArray[2])) {
-        console.log("Not enough intelligence")
-    }
+        if (dexterityImport < item.minDexterity) {
+            console.log("Not enough dexterity for", item.name);
+        }
 
-    if (faithImport < Number(requirementsArray[3])) {
-        console.log("Not enough faith")
-    }
+        if (intelligenceImport < item.minIntelligence) {
+            console.log("Not enough intelligence for", item.name);
+        }
+
+        if (faithImport < item.minFaith) {
+            console.log("Not enough faith for", item.name);
+        }
+    });
 
     return (
         <>
@@ -62,12 +69,17 @@ export default function Home() {
                 faithImport={faithImport}
                 setFaithImport={setFaithImport}
             />
-            <EquipAdd userItem={userItem} removeItem={(index) => {
-                const newItems = userItem.filter((_, i) => i !== index);
-                setUserItem(newItems);
-            }}
-                      requirementsItem={requirementsItem}/>
-            <EquipList userItem={userItem} setUserItem={setUserItem} requirementsItem={requirementsItem} setRequirementsItem={setRequirementsItem}/>
+            <EquipAdd
+                userItem={userItem}
+                removeItem={removeItem}
+                requirementsItem={requirementsItem}
+            />
+            <EquipList
+                userItem={userItem}
+                setUserItem={setUserItem}
+                requirementsItem={requirementsItem}
+                setRequirementsItem={setRequirementsItem}
+            />
         </>
     );
 }
