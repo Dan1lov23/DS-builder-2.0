@@ -9,11 +9,16 @@ export default function EquipList({ userItem, setUserItem}) {
             const newItem = {
                 src,
                 name,
-                damage,
+                damage: weapon.damage,
                 minStrength: weapon.minStrength,
                 minDexterity: weapon.minDexterity,
                 minIntelligence: weapon.minIntelligence,
-                minFaith: weapon.minFaith
+                minFaith: weapon.minFaith,
+                // скейлы от оружия
+                strengthScale: "E",
+                dexterityScale: "A",
+                intelligenceScale: "-",
+                faithScale: "-"
             };
             setUserItem([...userItem, newItem]);
         }
@@ -25,29 +30,44 @@ export default function EquipList({ userItem, setUserItem}) {
             name: "Daggers",
             weapons: [
                 {
-                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Dagger.png", name: "Dagger",
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Dagger.png",
+                    // название оружия
+                    name: "Dagger",
+                    // урон от оружия
                     damage: 140,
                     // требования для нормального использования оружия
-                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                    // минимальная сила
+                    minStrength: 5,
+                    // минимальная ловкость
+                    minDexterity: 8,
+                    // миимальный интеллект
+                    minIntelligence: 0,
+                    // манимальная вера
+                    minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Ghost_Blade.png", name: "Ghost Blade",
+                    damage: 140,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Bandit's_Knife.png", name: "Bandit's Knife",
+                    damage: 140,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,}
                 ,
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Parrying_Dagger.png", name: "Parrying Dagger",
+                    damage: 140,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Priscilla's_Dagger.png", name: "Priscilla's Dagger",
+                    damage: 140,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Dark%20Silver%20Tracer.png", name: "Silver Tracer",
+                    damage: 140,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
             ]
@@ -93,7 +113,9 @@ export default function EquipList({ userItem, setUserItem}) {
             name: "Ultra Greatswords",
             weapons: [
                 {
-                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png", name: "Dragon Greatsword",
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png",
+                    name: "Dragon Greatsword",
+                    damage: 585,
                     minStrength: 50, minDexterity: 10, minFaith: 0, minIntelligence: 0
                 },
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/greatsword.png", name: "Great Greatsword"},

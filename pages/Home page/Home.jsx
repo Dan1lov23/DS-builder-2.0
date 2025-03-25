@@ -2,6 +2,7 @@ import CharacterRedactor from '../../components/character redactor/Redactor.jsx'
 import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
 import EquipList from "../equip list page/equipList.jsx";
 import { useState, useEffect } from "react";
+import ArmorList from "../armorListPage/armorList.jsx";
 
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
@@ -17,6 +18,23 @@ export default function Home() {
     const removeItem = (index) => {
         setUserItem(prevItems => prevItems.filter((_, i) => i !== index));
     };
+
+    // переменная для хранения всего дамага с ппесонажа
+    const allDamage = 0;
+
+    // получаем все скейлы полученного оружия
+
+    let scaleArray = [];
+
+    // получаем все скейлы полученного оружия
+    if (userItem.length > 0) {
+        const strengthScale = userItem[0].strengthScale;
+        const dexterityScale = userItem[0].dexterityScale;
+        const intelligenceScale = userItem[0].intelligenceScale;
+        const faithScale = userItem[0].faithScale;
+        scaleArray.push(strengthScale, dexterityScale, intelligenceScale, faithScale);
+        console.log(scaleArray);
+    }
 
     // Печать strengthImport при его обновлении
     useEffect(() => {
@@ -69,6 +87,7 @@ export default function Home() {
                 faithImport={faithImport}
                 setFaithImport={setFaithImport}
             />
+            <ArmorList/>
             <EquipAdd
                 userItem={userItem}
                 removeItem={removeItem}

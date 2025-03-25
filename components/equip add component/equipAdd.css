@@ -23,12 +23,26 @@
     .deleteButton:hover {
         transform: scale(1.1);
     }
+    h1 {
+        font-size: 25px;
+    }
 }
 
 .equipAdd {
     img {
         width: 150px;
         height: 150px;
+    }
+}
+
+.equipAddDamage {
+    display: flex;
+    margin-left: 50px;
+    img {
+        margin-right: 20px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
     }
 }
 
