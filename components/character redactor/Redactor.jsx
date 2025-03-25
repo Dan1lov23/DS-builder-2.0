@@ -5,8 +5,7 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
 import {useState} from "react";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport,
-                                              intelligenceImport, setIntelligenceImport, faithImport, setFaithImport}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport}) {
 
     const [level, setLevel] = useState(1);
     const [vitality, setVitality] = useState(10);

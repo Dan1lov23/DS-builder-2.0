@@ -1,18 +1,21 @@
 import './equipList.css';
 
-export default function EquipList({ userItem, setUserItem, requirementsItem, setRequirementsItem}) {
+export default function EquipList({ userItem, setUserItem}) {
 
 
     function addItem(src, name) {
         if (userItem.length < 2) {
-            // метод flatmap дя правильной реализации механизама поиска нужного предмеьта раздела weapon
             const weapon = weaponsTypes.flatMap(type => type.weapons).find(weapon => weapon.name === name);
-            const newItem = { src, name, minStrength: weapon.minStrength, minDexterity: weapon.minDexterity, minIntelligence: weapon.minIntelligence, minFaith: weapon.minFaith};
-            const requirements = [`${newItem.minStrength} ${newItem.minDexterity} ${newItem.minIntelligence} ${newItem.minFaith}`]
-            //console.log(requirements);
+            const newItem = {
+                src,
+                name,
+                damage,
+                minStrength: weapon.minStrength,
+                minDexterity: weapon.minDexterity,
+                minIntelligence: weapon.minIntelligence,
+                minFaith: weapon.minFaith
+            };
             setUserItem([...userItem, newItem]);
-            requirementsItem = requirements;
-            setRequirementsItem([...requirementsItem]);
         }
     }
 
@@ -23,14 +26,30 @@ export default function EquipList({ userItem, setUserItem, requirementsItem, set
             weapons: [
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Dagger.png", name: "Dagger",
-                    // требования
-                    minStrength: 5, minDexterity: 8, minIntelligence:  0, minFaith: 0,
+                    damage: 140,
+                    // требования для нормального использования оружия
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Ghost_Blade.png", name: "Ghost Blade"},
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Bandit's_Knife.png", name: "Bandit's Knife"},
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Parrying_Dagger.png", name: "Parrying Dagger"},
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Priscilla's_Dagger.png", name: "Priscilla's Dagger"},
-                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Dark%20Silver%20Tracer.png", name: "Silver Tracer"},
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Ghost_Blade.png", name: "Ghost Blade",
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                },
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Bandit's_Knife.png", name: "Bandit's Knife",
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,}
+                ,
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Parrying_Dagger.png", name: "Parrying Dagger",
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                },
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Priscilla's_Dagger.png", name: "Priscilla's Dagger",
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                },
+                {
+                    src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Dark%20Silver%20Tracer.png", name: "Silver Tracer",
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                },
             ]
         },
         {
