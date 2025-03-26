@@ -1,0 +1,41 @@
+.addHelmMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.addHelmMainContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 142px);
+    text-align: center;
+    img {
+        margin: 30px;
+    }
+}
+
+.addHelmMainItem {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.addHelmMainItem:hover {
+    transform: scale(1.4);
+    border: white solid 1px;
+}
+
+.addHelmMain a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 14px;
+}
+
+.addHelmMain a:hover {
+    color: Gold;
+    font-size: 16px;
+}
+
+.addHelmMainContentTitle {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+}
