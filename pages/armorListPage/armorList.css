@@ -5,7 +5,7 @@
 
 .armorListMainContanier {
     display: grid;
-    grid-template-columns: repeat(4, 184px);
+    grid-template-columns: repeat(4, 182px);
 
 }
 
