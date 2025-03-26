@@ -8,11 +8,6 @@ function ArmorList() {
 
     //let helmSrc = "https://t3.ftcdn.net/jpg/02/61/04/02/360_F_261040216_dI5MBh32t9TXeLN1l3mSmNCwILuNcUi5.jpg";
 
-
-    // обновил компонент для того, чтобы нужный шлем вставал на место с иконкой шлема,
-    // потом ещё доработаю
-
-
     useEffect(() => {
         console.log("importHelmSrc изменился:", importHelmSrc);
         // Здесь можно выполнить любые побочные эффекты, когда importHelmSrc изменяется
