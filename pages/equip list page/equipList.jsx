@@ -2,6 +2,7 @@ import './equipList.css';
 
 export default function EquipList({ userItem, setUserItem}) {
 
+    //
 
     function addItem(src, name) {
         if (userItem.length < 2) {
