@@ -6,7 +6,6 @@ function ArmorList() {
     const [importHelmSrc, setImportHelmSrc] = useState("");
     const [importHelmName, setImportHelmName] = useState("");
 
-    // URL изображения по умолчанию
     const defaultHelmSrc = "https://static-00.iconduck.com/assets.00/brutal-helm-icon-512x512-si8ohd6j.png";
 
     useEffect(() => {
@@ -17,9 +16,19 @@ function ArmorList() {
         console.log("importHelmName изменился:", importHelmName);
     }, [importHelmName]);
 
+    function show() {
+        const showHelmDiv = document.getElementById("showList");
+        if (showHelmDiv.style.display === "none") {
+            showHelmDiv.style.display = "block";
+        } else {
+            showHelmDiv.style.display = "none";
+        }
+    }
+
     return (
         <>
-            <div>
+            <button onClick={show}>Show helms</button>
+            <div id="showList">
                 <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName}/>
             </div>
             <div className="armourListMain">
