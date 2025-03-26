@@ -6,17 +6,15 @@ function ArmorList() {
     const [importHelmSrc, setImportHelmSrc] = useState("");
     const [importHelmName, setImportHelmName] = useState("");
 
-    //let helmSrc = "https://t3.ftcdn.net/jpg/02/61/04/02/360_F_261040216_dI5MBh32t9TXeLN1l3mSmNCwILuNcUi5.jpg";
+    // URL изображения по умолчанию
+    const defaultHelmSrc = "https://static-00.iconduck.com/assets.00/brutal-helm-icon-512x512-si8ohd6j.png";
 
     useEffect(() => {
         console.log("importHelmSrc изменился:", importHelmSrc);
-        // Здесь можно выполнить любые побочные эффекты, когда importHelmSrc изменяется
-        document.getElementById("1").innerHTML = importHelmSrc;
-        console.log(importHelmSrc);
     }, [importHelmSrc]);
 
     useEffect(() => {
-        console.log("impportHelmName изменился:", importHelmName);
+        console.log("importHelmName изменился:", importHelmName);
     }, [importHelmName]);
 
     return (
@@ -28,7 +26,7 @@ function ArmorList() {
                 <div className="armorListMainContainer">
                     <div className="armor">
                         <a href="#">
-                            <img id="1" src={importHelmSrc} alt="Helm"/>
+                            <img id="1" src={importHelmSrc || defaultHelmSrc} alt="Helm"/>
                         </a>
                     </div>
                     <div className="armor">
