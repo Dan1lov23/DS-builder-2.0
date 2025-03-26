@@ -3,7 +3,7 @@
     margin-left: 25%;
 }
 
-.armorListMainContanier {
+.armorListMainContainer {
     display: grid;
     grid-template-columns: repeat(4, 182px);
 
