@@ -7,7 +7,7 @@
 
 .addHelmMainContainer {
     display: grid;
-    grid-template-columns: repeat(10, 142px);
+    grid-template-columns: repeat(10, 144px);
     text-align: center;
     img {
         margin: 30px;
