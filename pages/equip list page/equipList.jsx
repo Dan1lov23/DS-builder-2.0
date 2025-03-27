@@ -47,27 +47,28 @@ export default function EquipList({ userItem, setUserItem}) {
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Ghost_Blade.png", name: "Ghost Blade",
-                    damage: 140,
+                    damage: 165,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Bandit's_Knife.png", name: "Bandit's Knife",
                     damage: 140,
-                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,}
+                    minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                }
                 ,
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Parrying_Dagger.png", name: "Parrying Dagger",
-                    damage: 140,
+                    damage: 135,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Priscilla's_Dagger.png", name: "Priscilla's Dagger",
-                    damage: 140,
+                    damage: 120,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Dark%20Silver%20Tracer.png", name: "Silver Tracer",
-                    damage: 140,
+                    damage: 112,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
                 },
             ]
