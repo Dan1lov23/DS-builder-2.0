@@ -27,13 +27,12 @@ function ArmorList() {
 
     return (
         <>
-            <button onClick={show}>Show helms</button>
             <div id="showList">
                 <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName}/>
             </div>
             <div className="armourListMain">
                 <div className="armorListMainContainer">
-                    <div className="armor">
+                    <div className="armor" onClick={show}>
                         <a href="#">
                             <img id="1" src={importHelmSrc || defaultHelmSrc} alt="Helm"/>
                         </a>
