@@ -5,7 +5,7 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
 import {useState} from "react";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, totalDamage}) {
 
     const [level, setLevel] = useState(1);
     const [vitality, setVitality] = useState(10);
@@ -258,6 +258,10 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                         <div className="stats">
                             <img src="https://image.pngaaa.com/450/291450-middle.png"/>
                             <span>Souls for new level - {newLevelSouls}</span>
+                        </div>
+                        <div className="stats">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1840/1840736.png"/>
+                            <span>Total damage - {totalDamage}</span>
                         </div>
                     </div>
                 </div>
