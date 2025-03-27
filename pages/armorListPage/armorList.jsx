@@ -2,9 +2,10 @@ import './armorList.css';
 import AddHelm from "../addHelm/AddHelm.jsx";
 import { useState, useEffect } from "react";
 
-function ArmorList() {
+function ArmorList({helmResist, setHelmResist}) {
     const [importHelmSrc, setImportHelmSrc] = useState("");
     const [importHelmName, setImportHelmName] = useState("");
+    const [importHelmResist, setImportHelmResist] = useState("");
 
     const defaultHelmSrc = "https://static-00.iconduck.com/assets.00/brutal-helm-icon-512x512-si8ohd6j.png";
 
@@ -16,6 +17,10 @@ function ArmorList() {
         console.log("importHelmName изменился:", importHelmName);
     }, [importHelmName]);
 
+    useEffect(() => {
+        console.log("importHelmResiste изменился:", importHelmResist);
+    }, [importHelmResist]);
+
     function show() {
         const showHelmDiv = document.getElementById("showList");
         if (showHelmDiv.style.display === "none") {
@@ -25,10 +30,13 @@ function ArmorList() {
         }
     }
 
+    helmResist = importHelmResist;
+    setHelmResist(helmResist);
+
     return (
         <>
-            <div id="showList">
-                <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName}/>
+            <div className="showList" id="showList">
+                <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName} setImportHelmResist={setImportHelmResist} />
             </div>
             <div className="armourListMain">
                 <div className="armorListMainContainer">
