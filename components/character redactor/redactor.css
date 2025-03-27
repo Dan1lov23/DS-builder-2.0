@@ -50,6 +50,14 @@ body {
     border-radius: 25%;
 }
 
+.statsSoul {
+    width: 24px;
+    height: 24px;
+    margin-right: 30px;
+    border: white solid 2px;
+    border-radius: 25%;
+}
+
 .stats span {
     flex-grow: 1;
     margin-left: 30px;
