@@ -16,6 +16,25 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     const [resistance, setResistance] = useState(10);
     const [intelligence, setIntelligence] = useState(10);
     const [faith, setFaith] = useState(10);
+    const [newLevelSouls, setNewLevelSouls] = useState(0);
+
+    // массив стоимости новго повышения уровня персонажа
+
+    const newLevelCostArray = [
+        // два нуля нужны чтобы при увелечении уровня правильно отображалось число душ нужных на повышение уровня
+        0, 0, 673, 690, 707, 724, 741, 758, 775, 793, 811,
+        829, 847, 1039, 1238, 1445, 1660, 1883, 2114, 2353, 2601,
+        2857, 3122, 3396, 3678, 3970, 4271, 4581, 4900, 5229, 5567,
+        5915, 6273, 6641, 7019, 7407, 7805, 8214, 8634, 9064, 9505,
+        9957, 10420, 10894, 11379, 11876, 12384, 12904, 13436, 13979, 14535,
+        15103, 15683, 16275, 16880, 17497, 18127, 18770, 19426, 20095, 20777,
+        21472, 22181, 22904, 23640, 24390, 25154, 25932, 26724, 27530, 28351,
+        29186, 30036, 30901, 31780, 32675, 33585, 34510, 35450, 36406, 37377,
+        118337, 151295, 189680, 233897, 284351, 341447, 405590, 477185, 556637, 644351,
+        740732, 846185, 961115, 1085927, 1221026, 1366817, 1523705, 1692095, 1872392, 2065001,
+        2270327, 2488775, 2720750, 2966657, 3226901, 3501887, 3792020, 4097705, 4419347, 4757351,
+        5112122, 5484065, 5873585, 6281087, 6706976, 7151657, 7615535, 8099015, 8602502, 8879349
+    ]
 
     const hpValues = [ // - массив для хранения показателей здоровья на разных уровнях прокачки этого стата
         400,  // уровень 1
@@ -158,13 +177,15 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     const handleIncrease = (setStat) => {
         setStat((prev) => prev + 1);
         setLevel(level + 1);
+        setNewLevelSouls(newLevelCostArray[level + 1]);
     };
 
-    const handleDecrease = (setStat) => {
+    const handleDecrease = (setStat, stat) => {
         setStat((prev) => Math.max(prev - 1, 10));
         // уровень не может быть меньше первого
-        if (level > 1) {
+        if (level >= 1 && stat > 10) {
             setLevel(level - 1);
+            setNewLevelSouls(newLevelCostArray[level - 1]);
         }
     };
 
@@ -212,7 +233,7 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                                 <img src={stat.href} alt={stat.signature}/>
                                 <button onClick={() => handleIncrease(stat.plus)}><FontAwesomeIcon icon={faPlus}/>
                                 </button>
-                                <button onClick={() => handleDecrease(stat.plus)}><FontAwesomeIcon icon={faMinus}/>
+                                <button onClick={() => handleDecrease(stat.plus, stat.num)}><FontAwesomeIcon icon={faMinus}/>
                                 </button>
                                 <span>{stat.signature}</span>
                                 <p>{stat.num}</p>
@@ -229,6 +250,10 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                         <div className="stats">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls-3/icon_equip_load.png"/>
                             <span>Equip Load - {equipLoad}</span>
+                        </div>
+                        <div className="stats">
+                            <img src="https://image.pngaaa.com/450/291450-middle.png"/>
+                            <span>Souls for new level - {newLevelSouls}</span>
                         </div>
                     </div>
                 </div>
