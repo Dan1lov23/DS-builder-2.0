@@ -5,7 +5,7 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
 import {useState} from "react";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist}) {
 
     const [level, setLevel] = useState(1);
     const [vitality, setVitality] = useState(10);
@@ -250,6 +250,10 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                         <div className="stats">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls-3/icon_equip_load.png"/>
                             <span>Equip Load - {equipLoad}</span>
+                        </div>
+                        <div className="stats">
+                            <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_phy.png"/>
+                            <span>Physical resist - {helmResist}</span>
                         </div>
                         <div className="stats">
                             <img src="https://image.pngaaa.com/450/291450-middle.png"/>
