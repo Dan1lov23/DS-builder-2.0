@@ -14,27 +14,42 @@ export default function Home() {
     const [intelligenceImport, setIntelligenceImport] = useState(10);
     const [faithImport, setFaithImport] = useState(10);
 
+    const [helmResist, setHelmResist] = useState(0);
+
+    // переменная для хранения всего дамага с персонажа
+    const [totalDamage, setTotalDamage] = useState(0);
+
     // Функция для удаления элемента
     const removeItem = (index) => {
         setUserItem(prevItems => prevItems.filter((_, i) => i !== index));
     };
-
-    // переменная для хранения всего дамага с ппесонажа
-    const allDamage = 0;
 
     // получаем все скейлы полученного оружия
 
     let scaleArray = [];
 
     // получаем все скейлы полученного оружия
-    if (userItem.length > 0) {
-        const strengthScale = userItem[0].strengthScale;
-        const dexterityScale = userItem[0].dexterityScale;
-        const intelligenceScale = userItem[0].intelligenceScale;
-        const faithScale = userItem[0].faithScale;
-        scaleArray.push(strengthScale, dexterityScale, intelligenceScale, faithScale);
-        console.log(scaleArray);
-    }
+    useEffect(() => {
+        if (userItem.length === true) {
+            const strengthScale = userItem[0].strengthScale;
+            const dexterityScale = userItem[0].dexterityScale;
+            const intelligenceScale = userItem[0].intelligenceScale;
+            const faithScale = userItem[0].faithScale;
+
+            scaleArray = [strengthScale, dexterityScale, intelligenceScale, faithScale]; // 0 - скейл от силы, 1 - скейл от ловкости,
+            // 2 - скейл от интеллекта, 3 - скейл от веры
+            console.log(scaleArray);
+        }
+    }, [userItem])
+
+    useEffect(() => {
+        if (userItem[0]) {
+            let allDamage = userItem[0].damage;
+            setTotalDamage(allDamage);
+            console.log("Итоговый урон вашего персонажа -", allDamage);
+            console.log(scaleArray);
+        }
+    }, [userItem]);
 
     // Печать strengthImport при его обновлении
     useEffect(() => {
@@ -52,6 +67,10 @@ export default function Home() {
     useEffect(() => {
         console.log('Обновление faithImport:', faithImport);
     }, [faithImport]);
+
+    useEffect(() => {
+        console.log("Импортирован резист шлема", helmResist);
+    }, [helmResist])
 
     // Проверка требований для каждого элемента
     userItem.forEach(item => {
@@ -86,8 +105,14 @@ export default function Home() {
 
                 faithImport={faithImport}
                 setFaithImport={setFaithImport}
+
+                helmResist={helmResist}
+                totalDamage={totalDamage}
             />
-            <ArmorList/>
+            <ArmorList
+                helmResist={helmResist}
+                setHelmResist={setHelmResist}
+            />
             <EquipAdd
                 userItem={userItem}
                 removeItem={removeItem}
