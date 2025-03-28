@@ -15,14 +15,26 @@ export default function EquipList({ userItem, setUserItem}) {
                 minIntelligence: weapon.minIntelligence,
                 minFaith: weapon.minFaith,
                 // скейлы от оружия
-                strengthScale: "E",
-                dexterityScale: "A",
-                intelligenceScale: "-",
-                faithScale: "-"
+                strengthScale: weapon.strengthScale,
+                dexterityScale: weapon.dexterityScale,
+                intelligenceScale: weapon.intelligenceScale,
+                faithScale: weapon.faithScale,
             };
             setUserItem([...userItem, newItem]);
         }
     }
+
+    // начинаю разрабатывать модуль скалирования урона от разных скелйов
+    // отлдельно стоит выделить систему скалирование урона
+    // A: 0.67
+    // B: 0.5
+    // C: 0.33
+    // D: 0.25
+    // E: 0.1
+    // это процент урона который добавляется к вашему урону в зависимости от прокачи некоторых статов
+    // формула для расчёта урона с учётом прокаченных статов
+    // Урон от силы=Базовый урон+(Сила×Коэффициент масштабирования)
+    // Также урон от оружия может увеличиваться если его взять в двуручный хват, но это я реализую позже
 
     const weaponsTypes = [
         {
@@ -44,11 +56,23 @@ export default function EquipList({ userItem, setUserItem}) {
                     minIntelligence: 0,
                     // манимальная вера
                     minFaith: 0,
+                    // скейл от силы
+                    strengthScale: "E",
+                    // скейл от ловкости
+                    dexterityScale: "A",
+                    // скейл от интелекта
+                    intelligenceScale: "-",
+                    // скейл от веры
+                    faithScale: "-"
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Ghost_Blade.png", name: "Ghost Blade",
                     damage: 165,
                     minStrength: 5, minDexterity: 8, minIntelligence: 0, minFaith: 0,
+                    strengthScale: "E",
+                    dexterityScale: "A",
+                    intelligenceScale: "-",
+                    faithScale: "-"
                 },
                 {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Wpn_Bandit's_Knife.png", name: "Bandit's Knife",
@@ -117,7 +141,11 @@ export default function EquipList({ userItem, setUserItem}) {
                     src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/dragon_greatsword.png",
                     name: "Dragon Greatsword",
                     damage: 585,
-                    minStrength: 50, minDexterity: 10, minFaith: 0, minIntelligence: 0
+                    minStrength: 50, minDexterity: 10, minFaith: 0, minIntelligence: 0,
+                    strengthScale: "A",
+                    dexterityScale: "B",
+                    intelligenceScale: "-",
+                    faithScale: "-"
                 },
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/greatsword.png", name: "Great Greatsword"},
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/black_knight_greatsword.png", name: "Black knight greatsword"},
