@@ -4,7 +4,7 @@ export default function AddHelm({ setImportHelmSrc, setImportHelmName, setImport
 
     const helmsArray = [
         // массив обьектов с парой ключ значение
-        // src - путь до изображения, name - название шлема, resist - значние, которое будет прибавлятьсяя к общему физическому резисту
+        // src - путь до изображения, name - название шлема, resist - значние, которое будет прибавлятьсяя к общему физи ческому резисту
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/wanderer_hood.png", name: "Helm of the Wise", resist: 21.8},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/thief_mask.png", name: "Six-Eyed Helm of the Channelers", resist: 21.8},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/brigand_hood.png", name: "Crystalline Helm", resist: 21.8},
