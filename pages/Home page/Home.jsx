@@ -13,10 +13,7 @@ export default function Home() {
     const [dexterityImport, setDexterityImport] = useState(10);
     const [intelligenceImport, setIntelligenceImport] = useState(10);
     const [faithImport, setFaithImport] = useState(10);
-
     const [helmResist, setHelmResist] = useState(0);
-
-    // переменная для хранения всего дамага с персонажа
     const [totalDamage, setTotalDamage] = useState(0);
 
     // Функция для удаления элемента
@@ -24,88 +21,71 @@ export default function Home() {
         setUserItem(prevItems => prevItems.filter((_, i) => i !== index));
     };
 
-    // получаем все скейлы полученного оружия
-
-    let scaleArray = [];
-
-    // получаем все скейлы полученного оружия
-    useEffect(() => {
-        if (userItem.length === true) {
-            const strengthScale = userItem[0].strengthScale;
-            const dexterityScale = userItem[0].dexterityScale;
-            const intelligenceScale = userItem[0].intelligenceScale;
-            const faithScale = userItem[0].faithScale;
-
-            scaleArray = [strengthScale, dexterityScale, intelligenceScale, faithScale]; // 0 - скейл от силы, 1 - скейл от ловкости,
-            // 2 - скейл от интеллекта, 3 - скейл от веры
-            console.log(scaleArray);
+    // Функция для нахождения бонуса при определённом скейле
+    const bonusForScale = (scaleStrength) => {
+        switch (scaleStrength) {
+            case "S": return 0.75;
+            case "A": return 0.67;
+            case "B": return 0.5;
+            case "C": return 0.33;
+            case "D": return 0.25;
+            case "E": return 0.1;
+            case "None": return 0;
+            default: return 0; // На случай, если скейл не распознан
         }
-    }, [userItem])
+    };
 
+    // Получаем все скейлы и рассчитываем общий урон
     useEffect(() => {
-        if (userItem[0]) {
-            let allDamage = userItem[0].damage;
-            setTotalDamage(allDamage);
-            console.log("Итоговый урон вашего персонажа -", allDamage);
-            console.log(scaleArray);
+        if (userItem.length > 0) {
+            const { strengthScale, dexterityScale, intelligenceScale, faithScale, damage } = userItem[0];
+
+            const strengthBonus = bonusForScale(strengthScale);
+            const dexterityBonus = bonusForScale(dexterityScale);
+            const intelligenceBonus = bonusForScale(intelligenceScale);
+            const faithBonus = bonusForScale(faithScale);
+
+            // Расчет общего урона
+            const calculatedDamage = damage +
+                (strengthImport * strengthBonus) +
+                (dexterityImport * dexterityBonus) +
+                (intelligenceImport * intelligenceBonus) +
+                (faithImport * faithBonus);
+
+            setTotalDamage(calculatedDamage);
+            console.log("Итоговый урон вашего персонажа -", calculatedDamage);
         }
-    }, [userItem]);
-
-    // Печать strengthImport при его обновлении
-    useEffect(() => {
-        console.log('Обновление strengthImport:', strengthImport);
-    }, [strengthImport]);
-
-    useEffect(() => {
-        console.log('Обновление dexterityImport:', dexterityImport);
-    }, [dexterityImport]);
-
-    useEffect(() => {
-        console.log('Обновление intelligenceImport:', intelligenceImport);
-    }, [intelligenceImport]);
-
-    useEffect(() => {
-        console.log('Обновление faithImport:', faithImport);
-    }, [faithImport]);
-
-    useEffect(() => {
-        console.log("Импортирован резист шлема", helmResist);
-    }, [helmResist])
+    }, [userItem, strengthImport, dexterityImport, intelligenceImport, faithImport]);
 
     // Проверка требований для каждого элемента
-    userItem.forEach(item => {
-        if (strengthImport < item.minStrength) {
-            console.log("Not enough strength for", item.name);
-        }
-
-        if (dexterityImport < item.minDexterity) {
-            console.log("Not enough dexterity for", item.name);
-        }
-
-        if (intelligenceImport < item.minIntelligence) {
-            console.log("Not enough intelligence for", item.name);
-        }
-
-        if (faithImport < item.minFaith) {
-            console.log("Not enough faith for", item.name);
-        }
-    });
+    useEffect(() => {
+        userItem.forEach(item => {
+            if (strengthImport < item.minStrength) {
+                console.log("Not enough strength for", item.name);
+            }
+            if (dexterityImport < item.minDexterity) {
+                console.log("Not enough dexterity for", item.name);
+            }
+            if (intelligenceImport < item.minIntelligence) {
+                console.log("Not enough intelligence for", item.name);
+            }
+            if (faithImport < item.minFaith) {
+                console.log("Not enough faith for", item.name);
+            }
+        });
+    }, [userItem, strengthImport, dexterityImport, intelligenceImport, faithImport]);
 
     return (
         <>
             <CharacterRedactor
                 strengthImport={strengthImport}
                 setStrengthImport={setStrengthImport}
-
                 dexterityImport={dexterityImport}
                 setDexterityImport={setDexterityImport}
-
                 intelligenceImport={intelligenceImport}
                 setIntelligenceImport={setIntelligenceImport}
-
                 faithImport={faithImport}
                 setFaithImport={setFaithImport}
-
                 helmResist={helmResist}
                 totalDamage={totalDamage}
             />

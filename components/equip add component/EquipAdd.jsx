@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function EquipAdd({ userItem, removeItem }) {
-    // печатаем все харакеристики оружия включая скейлы для проверки
-    console.log(userItem[0]);
     return (
         <div className="equipAddMain">
             <div className="equipAddContainer">
