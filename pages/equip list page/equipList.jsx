@@ -261,6 +261,23 @@ export default function EquipList({ userItem, setUserItem}) {
             name: "Halberds",
             weapons: [
                 {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/halberd.png", name: "Halberd"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/gargoyles_halberd.png", name: "Gargoyles Halberd"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/titanite_catch_pole.png", name: "Titanite Catch Pole"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/black_knight_halberd.png", name: "Black Knight"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/great_scythe.png", name: "Great Scythe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/lifehunt_scythe_1.png", name: "Lift Scythe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/scythe.png", name: "Scythe"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/lucerne.png", name: "Lucerne"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/giants_halberd.png", name: "Giant Halberd"},
+            ]
+        },
+        {
+            name: "Whips",
+            weapons: [
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/whip.png", name: "Whip"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/notched_whip.png", name: "Notched Whip"},
+                {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Guardian%20Tail.png", name: "Guardian " +
+                        "Tail"},
             ]
         }
     ];
