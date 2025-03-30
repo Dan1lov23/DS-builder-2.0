@@ -61,3 +61,13 @@
         height: 40px;
     }
 }
+
+@media (max-width: 480px) {
+    .equipAddMain {
+        width: 1035px;
+    }
+    .weaponImg {
+        width: 180px;
+        height: 80px;
+    }
+}

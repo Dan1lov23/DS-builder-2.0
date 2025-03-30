@@ -27,3 +27,17 @@
 .showList {
     display: none;
 }
+
+@media (max-width: 480px) {
+    .armorListMainContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 90px);
+    }
+    .armourListMain {
+        margin-left: 5%;
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
