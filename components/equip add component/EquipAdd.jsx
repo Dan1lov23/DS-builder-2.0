@@ -12,7 +12,7 @@ export default function EquipAdd({ userItem, removeItem }) {
                             <img src="https://cdn-icons-png.flaticon.com/512/1840/1840736.png"/><h1>{item.damage}</h1>
                         </div>
                         <button>
-                            <img src={item.src} alt={item.name} />
+                            <img className="weaponImg" src={item.src} alt={item.name} />
                         </button>
                         <button className="deleteButton" onClick={() => removeItem(index)}>
                             <FontAwesomeIcon icon={faTrash} />
@@ -20,19 +20,19 @@ export default function EquipAdd({ userItem, removeItem }) {
                         <h1>Requirements</h1>
                         <div className="requirementsMain">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_strength.png" />
-                            <p>{item.minStrength}</p>
+                            <p>{item.minStrength} ({item.strengthScale})</p>
                         </div>
                         <div className="requirementsMain">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_dexterity.png" />
-                            <p>{item.minDexterity}</p>
+                            <p>{item.minDexterity} ({item.dexterityScale})</p>
                         </div>
                         <div className="requirementsMain">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_intelligence.png" />
-                            <p>{item.minIntelligence}</p>
+                            <p>{item.minIntelligence} ({item.intelligenceScale})</p>
                         </div>
                         <div className="requirementsMain">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_faith.png" />
-                            <p>{item.minFaith}</p>
+                            <p>{item.minFaith} ({item.faithScale})</p>
                         </div>
                     </div>
                 ))}
