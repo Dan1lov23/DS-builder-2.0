@@ -55,6 +55,13 @@ export default function Home() {
             setTotalDamage(calculatedDamage);
             console.log("Итоговый урон вашего персонажа -", calculatedDamage);
         }
+
+        // проверка написанна для того, чтобы при удаленни оружия итоговый дамаг становился равен 0
+
+        if (userItem.length === 0) {
+            const calculatedDamage = 0
+            setTotalDamage(calculatedDamage)
+        }
     }, [userItem, strengthImport, dexterityImport, intelligenceImport, faithImport]);
 
     // Проверка требований для каждого элемента
