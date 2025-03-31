@@ -3,6 +3,7 @@ import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
 import EquipList from "../equip list page/equipList.jsx";
 import { useState, useEffect } from "react";
 import ArmorList from "../armorListPage/armorList.jsx";
+import AddBosess from "../../components/add boss component/AddBoss.jsx";
 
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
@@ -105,6 +106,7 @@ export default function Home() {
                 removeItem={removeItem}
                 requirementsItem={requirementsItem}
             />
+            <AddBosess/>
             <EquipList
                 userItem={userItem}
                 setUserItem={setUserItem}
