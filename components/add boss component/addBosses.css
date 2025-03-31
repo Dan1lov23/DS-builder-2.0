@@ -1,0 +1,70 @@
+.showBosessButton {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    margin: 60px;
+    button {
+        background: black;
+        border: white solid 6px;
+        border-radius: 15px;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+        transform: scale(1.1);
+    }
+}
+
+.showBossesList {
+    display: none;
+}
+
+.mainAddBoses {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.addBosessContanier {
+    display: grid;
+    grid-template-columns: repeat(3, 362px);
+
+    img {
+        width: 250px;
+        height: 250px;
+        border: 5px solid white;
+        border-radius: 50%;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+    a {
+        color: yellow;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: gold;
+    }
+
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .addBosessContanier {
+        display: grid;
+        grid-template-columns: repeat(3, 112px);
+
+        img {
+            width: 100px;
+            height: 100px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    }
+}
