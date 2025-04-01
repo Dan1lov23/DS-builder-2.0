@@ -21,13 +21,16 @@ function ArmorList({helmResist, setHelmResist}) {
         console.log("importHelmResiste изменился:", importHelmResist);
     }, [importHelmResist]);
 
+    let showCounter = 0;
+
     function show() {
         const showHelmDiv = document.getElementById("showList");
-        if (showHelmDiv.style.display === "none") {
+        if (showCounter % 2 === 0) {
             showHelmDiv.style.display = "block";
         } else {
             showHelmDiv.style.display = "none";
         }
+        showCounter++;
     }
 
     helmResist = importHelmResist;
