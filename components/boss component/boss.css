@@ -1,0 +1,17 @@
+.boss {
+    text-align: center;
+
+}
+
+.bossImg {
+    width: 250px;
+    height: 250px;
+    border: 5px solid white;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bossHpBarImg {
+    width: 400px;
+    border-radius: 50px;
+}
