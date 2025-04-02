@@ -3,8 +3,9 @@ import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
 import EquipList from "../equip list page/equipList.jsx";
 import { useState, useEffect } from "react";
 import ArmorList from "../armorListPage/armorList.jsx";
-import Bosses from "../../components/boss component/BossComponent.jsx";
+import BossComponent from "../../components/boss component/BossComponent.jsx";
 
+import './home.css';
 
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
@@ -84,6 +85,38 @@ export default function Home() {
         });
     }, [userItem, strengthImport, dexterityImport, intelligenceImport, faithImport]);
 
+
+    // получаем хп босса
+    let [bossHp, setBossHp] = useState(0);
+    useEffect(() => {
+        console.log("Текущее здоровье босса:", bossHp);// лог для проверки
+    }, [bossHp]);
+
+    // счётчи ударов по боссу
+    let hitCounter = 0;
+
+    // функция удара по боссу
+    const startBossHp = bossHp;
+    function strikeButton() {
+        let remaningBossHp = Math.round(bossHp - totalDamage);
+        if (remaningBossHp >= 0) {
+            bossHp -= totalDamage;
+            document.getElementById("remaningBossHp").innerHTML = `${remaningBossHp}/${startBossHp} HP`;
+            hitCounter++;
+        } else if (remaningBossHp <= 0) {
+            document.getElementById("remaningBossHp").innerHTML = `Босс убит`
+            alert(`Босс убит \nПотрачено ударов - ${hitCounter + 1}`)
+        }
+    }
+
+    // получаем резисты
+
+    const [resist, setResist] = useState(0);
+
+    useEffect(() => {
+        console.log("Резист босса -", resist);
+    }, [resist])
+
     return (
         <>
             <CharacterRedactor
@@ -107,7 +140,13 @@ export default function Home() {
                 removeItem={removeItem}
                 requirementsItem={requirementsItem}
             />
-            <Bosses/>
+            <BossComponent importBossHp={bossHp} setImportBossHp={setBossHp} setBossResist={setResist} />
+            <div className="bossStrike">
+                <div className="bossStrikeButton">
+                    <button onClick={() => strikeButton()}><img src="https://cdn-icons-png.flaticon.com/512/1840/1840736.png"/></button>
+                    <p id="remaningBossHp"></p>
+                </div>
+            </div>
             <EquipList
                 userItem={userItem}
                 setUserItem={setUserItem}
