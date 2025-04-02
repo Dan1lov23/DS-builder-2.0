@@ -1,0 +1,15 @@
+.bossStrike {
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    button {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.bossStrikeButton {
+    text-align: center;
+    margin-top: 60px;
+}
