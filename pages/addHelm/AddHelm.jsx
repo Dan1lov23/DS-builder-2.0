@@ -82,19 +82,21 @@ export default function AddHelm({ setImportHelmSrc, setImportHelmName, setImport
 
     return (
         <>
-            <div className="addHelmMainContentTitle">
-                <h1>Helms</h1>
-            </div>
-            <div className="addHelmMain">
-                <div className="addHelmMainContainer">
-                    {helmsArray.map((item, index) => (
-                        <div key={index} className="addHelmMainItem" onClick={() => addHelm(item.src, item.name, item.resist)}> {/* Передаем только src */}
-                            <img src={item.src} alt={item.name} />
-                            <a href={`https://darksouls.wiki.fextralife.com/${item.name}`} target="_blank" rel="noopener noreferrer"> {/* Добавил target="_blank" и rel="noopener noreferrer" */}
-                                {item.name}
-                            </a>
-                        </div>
-                    ))}
+            <div className="addHelmMainModalContainer">
+                <div className="addHelmMainContentTitle">
+                    <h1>Helms</h1>
+                </div>
+                <div className="addHelmMain">
+                    <div className="addHelmMainContainer">
+                        {helmsArray.map((item, index) => (
+                            <div key={index} className="addHelmMainItem" onClick={() => addHelm(item.src, item.name, item.resist)}> {/* Передаем только src */}
+                                <img src={item.src} alt={item.name} />
+                                <a href={`https://darksouls.wiki.fextralife.com/${item.name}`} target="_blank" rel="noopener noreferrer"> {/* Добавил target="_blank" и rel="noopener noreferrer" */}
+                                    {item.name}
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>
