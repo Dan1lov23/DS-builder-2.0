@@ -39,7 +39,7 @@ function ArmorList({helmResist, setHelmResist}) {
     return (
         <>
             <div className="showList" id="showList">
-                <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName} setImportHelmResist={setImportHelmResist} />
+                <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName} setImportHelmResist={setImportHelmResist}/>
             </div>
             <div className="armourListMain">
                 <div className="armorListMainContainer">
