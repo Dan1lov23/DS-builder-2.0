@@ -4,6 +4,7 @@ import EquipList from "../equip list page/equipList.jsx";
 import { useState, useEffect } from "react";
 import ArmorList from "../armorListPage/armorList.jsx";
 import BossComponent from "../../components/boss component/BossComponent.jsx";
+import Rings from "../../pages/addRing/addRing.jsx";
 
 import './home.css';
 
@@ -135,6 +136,7 @@ export default function Home() {
                 helmResist={helmResist}
                 setHelmResist={setHelmResist}
             />
+            <Rings/>
             <EquipAdd
                 userItem={userItem}
                 removeItem={removeItem}
