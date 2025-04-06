@@ -11,15 +11,17 @@
 }
 
 .modal-content {
-    background-color: white;
+    background-color: black;
+    border: 3px solid white;
     border-radius: 8px;
     padding: 20px;
-    max-width: 600px; /* Максимальная ширина модального окна */
+    max-width: 800px; /* Максимальная ширина модального окна */
     max-height: 80vh; /* Максимальная высота модального окна */
     overflow-y: auto; /* Включаем вертикальную прокрутку */
 }
 
 .close-button {
+    color: white;
     background-color: transparent;
     border: none;
     font-size: 20px;
