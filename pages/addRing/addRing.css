@@ -1,0 +1,32 @@
+.showRingsList {
+    display: none;
+}
+
+.showRingsList2 {
+    display: none;
+}
+
+
+.showRingsMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.showRingsMainContent {
+    button {
+        img {
+            width: 130px;
+            height: 130px;
+        }
+        margin: 60px;
+        width: 140px;
+        height: 140px;
+        transition: background-color 0.3s, transform 0.2s;
+        border-radius: 10px;
+    }
+    button:hover {
+        transform: scale(1.05);
+    }
+}
