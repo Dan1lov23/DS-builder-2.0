@@ -1,0 +1,37 @@
+.ringMain {
+
+}
+
+.ringsMainContanier {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.rings {
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 142px);
+    text-align: center;
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    a {
+        font-size: 12px;
+        color: yellow;
+        text-decoration: none;
+    }
+    a:hover {
+        color: gold;
+        text-decoration: underline;
+    }
+}
+
+.ring {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.ring:hover {
+    transform: scale(1.4);
+}
