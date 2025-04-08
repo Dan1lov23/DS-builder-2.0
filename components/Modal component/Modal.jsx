@@ -1,13 +1,11 @@
 import React from 'react';
-import './modal.css'; // Импортируйте стили для модального окна
+import './modal.css'; // Убедитесь, что путь к вашему CSS правильный
 
 const Modal = ({ isOpen, onClose, children }) => {
-    if (!isOpen) return null;
-
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-button" onClick={onClose}>X</button>
+        <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <button className="close-button" onClick={onClose}>×</button>
                 {children}
             </div>
         </div>
