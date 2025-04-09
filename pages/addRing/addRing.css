@@ -30,3 +30,15 @@
         transform: scale(1.05);
     }
 }
+
+@media (max-width: 480px) {
+    .showRingsMainContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            margin: 20px;
+        }
+    }
+}
+

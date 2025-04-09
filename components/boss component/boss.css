@@ -13,5 +13,29 @@
 
 .bossHpBarImg {
     width: 400px;
-    border-radius: 50px;
+    border-radius: 50%;
+}
+
+.showBossesButton {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    margin: 60px;
+    button {
+        background: black;
+        border: white solid 6px;
+        border-radius: 15px;
+        img {
+            width: 140px;
+            height: 140px;
+        }
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+        transform: scale(1.1);
+    }
+}
+
+.showBossesList {
+    display: none;
 }
