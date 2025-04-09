@@ -4,7 +4,7 @@ import './addRing.css';
 import { useEffect, useState } from "react";
 import Modal from '../../components/Modal component/Modal.jsx'; // Импортируйте ваш компонент модального окна
 
-export default function Rings() {
+export default function Rings({setImportRingName}) {
     const [ringSrc, setRingSrc] = useState("");
     const [ringName, setRingName] = useState("");
     const [ringSrc2, setRingSrc2] = useState("");
@@ -30,6 +30,8 @@ export default function Rings() {
         console.log("Кольцо -", ringName2);
     }, [ringName2]);
 
+    setImportRingName(ringName);
+
     return (
         <>
             {/* Модальное окно для первого списка колец */}
@@ -37,7 +39,6 @@ export default function Rings() {
                 <RingsList setRingSrc={setRingSrc} setRingName={setRingName} />
             </Modal>
 
-            {/* Модальное окно для второго списка колец */}
             <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
                 <RingList2 setRingSrc={setRingSrc2} setRingName={setRingName2} />
             </Modal>
