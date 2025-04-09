@@ -1,11 +1,17 @@
 import './armorList.css';
 import AddHelm from "../addHelm/AddHelm.jsx";
 import { useState, useEffect } from "react";
+import '../../components/Modal component/Modal.jsx'
+import RingsList from "../../components/rings list components/ring list component 1/RingsList.jsx";
+import Modal from "../../components/Modal component/Modal.jsx";
 
 function ArmorList({helmResist, setHelmResist}) {
     const [importHelmSrc, setImportHelmSrc] = useState("");
     const [importHelmName, setImportHelmName] = useState("");
     const [importHelmResist, setImportHelmResist] = useState("");
+
+    // для модального окна
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const defaultHelmSrc = "https://static-00.iconduck.com/assets.00/brutal-helm-icon-512x512-si8ohd6j.png";
 
@@ -38,12 +44,12 @@ function ArmorList({helmResist, setHelmResist}) {
 
     return (
         <>
-            <div className="showList" id="showList">
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName} setImportHelmResist={setImportHelmResist}/>
-            </div>
+            </Modal>
             <div className="armourListMain">
                 <div className="armorListMainContainer">
-                    <div className="armor" onClick={show}>
+                    <div className="armor" onClick={() => setIsModalOpen(true)}>
                         <a href="#">
                             <img id="1" src={importHelmSrc || defaultHelmSrc} alt="Helm"/>
                         </a>
