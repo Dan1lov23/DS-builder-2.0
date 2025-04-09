@@ -2,12 +2,16 @@ import './boss.css';
 import '../add boss component/AddBoss.jsx';
 import AddBosses from "../add boss component/AddBoss.jsx";
 import { useState, useEffect } from "react";
+import '../../components/Modal component/Modal.jsx';
+import Modal from "../Modal component/Modal.jsx";
+import RingsList from "../rings list components/ring list component 1/RingsList.jsx";
 
 export default function BossComponent({ setBossName, setBossSrc, setBossHp, setBossResist, setImportBossHp }) {
     const [name, setName] = useState("");
     const [src, setSrc] = useState("");
     const [hp, setHp] = useState(0);
     const [resist, setResist] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         setImportBossHp(hp);
@@ -18,13 +22,20 @@ export default function BossComponent({ setBossName, setBossSrc, setBossHp, setB
 
     return (
         <>
-            <AddBosses setBossName={setName} setBossSrc={setSrc} setBossHp={setHp} setBossResist={setResist} />
+            <div className="showBossesButton">
+                <button onClick={() => setIsModalOpen(true)}>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RVVrAAwPsM5OPq9nRgDH6A0pmqGy6iZ0OlBrSniOLEPTpLBXj1i4WlbmRbsmEBgN73M&usqp=CAU"/>
+                </button>
+            </div>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <AddBosses setBossName={setName} setBossSrc={setSrc} setBossHp={setHp} setBossResist={setResist} />
+            </Modal>
             <div className="bossComponentMain">
                 <div className="boss">
                     <img src={src || defaultBossSrc} alt="" className="bossImg" />
                     <h1>{name}</h1>
                     <h1>{hp} HP</h1>
-                    <img src="https://www.kindpng.com/picc/m/85-852344_health-bar-png-game-health-bar-png-transparent.png" className="bossHpBarImg" />
+
                 </div>
             </div>
         </>
