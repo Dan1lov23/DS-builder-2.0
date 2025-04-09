@@ -183,25 +183,18 @@ export default function AddBosses({setBossName, setBossSrc, setBossHp, setBossRe
 
     return (
         <>
-            <div className="showBosessButton">
-                <button onClick={showBosses} id="showButton">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RVVrAAwPsM5OPq9nRgDH6A0pmqGy6iZ0OlBrSniOLEPTpLBXj1i4WlbmRbsmEBgN73M&usqp=CAU"/>
-                </button>
-            </div>
-            <div className="showBossesList" id="showBossesList">
-                <div className="mainAddBoses">
-                    <div className="addBosessContanier">
-                        {bosessArray.map((item, index) => (
-                            <div key={index} className="addBosessContanierOne" onClick={() => addBoss(item.name, item.src, item.hp, item.resist)}>
-                                <p></p>
-                                <img src={item.src} alt=""/>
-                                <p></p>
-                                <a href={`https://darksouls.wiki.fextralife.com/${item.name}`}>
-                                    {item.name}
-                                </a>
-                            </div>
-                        ))}
-                    </div>
+            <div className="mainAddBoses">
+                <div className="addBosessContanier">
+                    {bosessArray.map((item, index) => (
+                        <div key={index} className="addBosessContanierOne" onClick={() => addBoss(item.name, item.src, item.hp, item.resist)}>
+                            <p></p>
+                            <img src={item.src} alt=""/>
+                            <p></p>
+                            <a href={`https://darksouls.wiki.fextralife.com/${item.name}`}>
+                                {item.name}
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
