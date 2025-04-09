@@ -23,7 +23,7 @@
     border: 3px solid white;
     border-radius: 8px;
     padding: 20px;
-    max-width: 800px; /* Максимальная ширина модального окна */
+    max-width: 90%; /* Максимальная ширина модального окна для мобильных устройств */
     max-height: 80vh; /* Максимальная высота модального окна */
     overflow-y: auto; /* Включаем вертикальную прокрутку */
 }
@@ -38,17 +38,36 @@
 
 .close-button:hover {
     color: grey;
-    font-size: 45px;
 }
 
+/* Адаптивные стили для мобильных устройств */
 @media (max-width: 480px) {
+    body {
+        width: 400px;
+    }
     .modal-overlay {
-        top: -100px;
-        left: 0;
-        right: 600px;
-        bottom: 0;
+        margin-top: -200px;
     }
     .modal-content {
-        width: 400px;
+        margin-top: -500px;
+        margin-left: -600px;
+        width: 340px;
+        padding: 10px; /* Уменьшаем отступы для мобильных устройств */
+        box-sizing: border-box; /* Учитываем отступы в ширине */
+        max-height: calc(100vh - 40px); /* Максимальная высота с учетом отступов */
+        overflow-y: auto; /* Включаем вертикальную прокрутку */
+        border-radius: 8px; /* Сохраняем радиус скругления углов */
+        margin-bottom: 20px; /* Отступ снизу для лучшего отображения на мобильных устройствах */
+    }
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0; /* Начальная непрозрачность */
+        visibility: hidden; /* Скрываем элемент */
+        transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
     }
 }
