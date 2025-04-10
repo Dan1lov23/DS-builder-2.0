@@ -74,8 +74,8 @@ export default function AddHelm({ setImportHelmSrc, setImportHelmName, setImport
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Bloated%20Sorcerer%20Head.png", name: "Bloated Sorcerer Head", resist: 14},
     ]
 
-    function addHelm(src, name, resist) { // Убрал ненужный параметр name
-        setImportHelmSrc(src); // Обновляем состояние с помощью setImportHelmSrc
+    function addHelm(src, name, resist) {
+        setImportHelmSrc(src);
         setImportHelmName(name);
         setImportHelmResist(resist);
     }
