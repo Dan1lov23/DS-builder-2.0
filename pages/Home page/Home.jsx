@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
 import ArmorList from "../armorListPage/armorList.jsx";
 import BossComponent from "../../components/boss component/BossComponent.jsx";
 import Rings from "../../pages/addRing/addRing.jsx";
+import '../../pages/addChest/addChest.jsx'
 
 import './home.css';
+import AddChest from "../addChest/addChest.jsx";
 
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
@@ -20,7 +22,24 @@ export default function Home() {
     const [helmResist, setHelmResist] = useState(0);
     const [totalDamage, setTotalDamage] = useState(0);
 
-    // Функция для удаления элемента
+    const [ringName, setRingName] = useState("");
+
+    useEffect(() => {
+        console.log("Название кольца -", ringName);
+    }, [ringName]);
+
+    // у каждого кольца будет уникальный бонус
+    // реадлизую это с помощью конструкции switch....case
+    switch(ringName) {
+        case "Cloranthy Ring":
+            console.log("Кольцо кларантии");
+            break;
+        case "Havel`s Ring":
+            console.log("")
+            break;
+    }
+
+    // Функция для удаления элемента снаряжения(оружия)
     const removeItem = (index) => {
         setUserItem(prevItems => prevItems.filter((_, i) => i !== index));
     };
@@ -86,7 +105,6 @@ export default function Home() {
         });
     }, [userItem, strengthImport, dexterityImport, intelligenceImport, faithImport]);
 
-
     // получаем хп босса
     let [bossHp, setBossHp] = useState(0);
     useEffect(() => {
@@ -136,7 +154,8 @@ export default function Home() {
                 helmResist={helmResist}
                 setHelmResist={setHelmResist}
             />
-            <Rings/>
+            <AddChest/>
+            <Rings setImportRingName={setRingName}/>
             <EquipAdd
                 userItem={userItem}
                 removeItem={removeItem}
