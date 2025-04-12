@@ -1,14 +1,15 @@
+import './home.css';
+
 import CharacterRedactor from '../../components/character redactor/Redactor.jsx';
 import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
 import EquipList from "../equip list page/equipList.jsx";
-import { useState, useEffect } from "react";
 import ArmorList from "../armorListPage/armorList.jsx";
 import BossComponent from "../../components/boss component/BossComponent.jsx";
 import Rings from "../../pages/addRing/addRing.jsx";
-import '../../pages/addChest/addChest.jsx'
-
-import './home.css';
 import AddChest from "../addChest/addChest.jsx";
+import Modal from "../../components/Modal component/Modal.jsx";
+
+import { useState, useEffect } from "react";
 
 export default function Home() {
     const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
@@ -23,6 +24,8 @@ export default function Home() {
     const [totalDamage, setTotalDamage] = useState(0);
 
     const [ringName, setRingName] = useState("");
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         console.log("Название кольца -", ringName);
@@ -111,8 +114,10 @@ export default function Home() {
         console.log("Текущее здоровье босса:", bossHp);// лог для проверки
     }, [bossHp]);
 
-    // счётчи ударов по боссу
-    let hitCounter = 0;
+    // моудль для ударов по боссу
+    // дальше будет дописываться
+
+    let hitCounter = 0;   // счётчи ударов по боссу
 
     // функция удара по боссу
     const startBossHp = bossHp;
@@ -156,24 +161,32 @@ export default function Home() {
             />
             <AddChest/>
             <Rings setImportRingName={setRingName}/>
+            <div className="openWeaponModal">
+                <button onClick={() => setIsModalOpen(true)}>
+                    <img src="https://png.pngtree.com/png-vector/20190330/ourmid/pngtree-vector-weapons-icon-png-image_892081.png"/>
+                </button>
+            </div>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <EquipList
+                    userItem={userItem}
+                    setUserItem={setUserItem}
+                    requirementsItem={requirementsItem}
+                    setRequirementsItem={setRequirementsItem}
+                />
+            </Modal>
             <EquipAdd
                 userItem={userItem}
                 removeItem={removeItem}
                 requirementsItem={requirementsItem}
             />
-            <BossComponent importBossHp={bossHp} setImportBossHp={setBossHp} setBossResist={setResist} />
+            <BossComponent importBossHp={bossHp} setImportBossHp={setBossHp} setBossResist={setResist}/>
             <div className="bossStrike">
                 <div className="bossStrikeButton">
-                    <button onClick={() => strikeButton()}><img src="https://cdn-icons-png.flaticon.com/512/1840/1840736.png"/></button>
+                    <button onClick={() => strikeButton()}><img
+                        src="https://cdn-icons-png.flaticon.com/512/1840/1840736.png"/></button>
                     <p id="remaningBossHp"></p>
                 </div>
             </div>
-            <EquipList
-                userItem={userItem}
-                setUserItem={setUserItem}
-                requirementsItem={requirementsItem}
-                setRequirementsItem={setRequirementsItem}
-            />
         </>
     );
 }
