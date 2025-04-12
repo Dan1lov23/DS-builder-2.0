@@ -1,8 +1,8 @@
 import './armorList.css';
-import AddHelm from "../addHelm/AddHelm.jsx";
+
 import { useState, useEffect } from "react";
-import '../../components/Modal component/Modal.jsx'
-import RingsList from "../../components/rings list components/ring list component 1/RingsList.jsx";
+
+import AddHelm from "../addHelm/AddHelm.jsx";
 import Modal from "../../components/Modal component/Modal.jsx";
 import '../../components/armor list component/ChestsList.jsx'
 import ChestsList from "../../components/armor list component/ChestsList.jsx";
