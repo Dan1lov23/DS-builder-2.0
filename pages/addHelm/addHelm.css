@@ -30,7 +30,8 @@
 
 .addHelmMain a:hover {
     color: Gold;
-    font-size: 16px;
+    font-size: 14px;
+    text-decoration: underline;
 }
 
 .addHelmMainContentTitle {

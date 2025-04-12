@@ -51,6 +51,16 @@
     margin: 50px;
 }
 
+.weaponMain {
+    a {
+        color: yellow;
+    }
+    a:hover {
+        color: Gold;
+        text-decoration: underline;
+    }
+}
+
 @media (max-width: 480px) {
     .equipListMainTitle {
         text-align: center;
@@ -64,13 +74,6 @@
         grid-template-columns: repeat(3, 102px);
         justify-content: center;
         align-items: center;
-        a {
-            text-decoration: none;
-            color: yellow;
-        }
-        a:hover {
-            color: Gold;
-        }
     }
     .weaponMain {
         font-size: 12px;

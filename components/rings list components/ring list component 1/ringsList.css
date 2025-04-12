@@ -47,6 +47,10 @@
         a {
             font-size: 10px;
         }
+        a:hover {
+            color: gold;
+            text-decoration: underline;
+        }
     }
 }
 

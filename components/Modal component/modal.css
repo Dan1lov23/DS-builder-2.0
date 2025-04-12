@@ -40,7 +40,6 @@
     color: grey;
 }
 
-/* Адаптивные стили для мобильных устройств */
 @media (max-width: 480px) {
     body {
         width: 400px;
@@ -49,8 +48,8 @@
         margin-top: -200px;
     }
     .modal-content {
-        margin-top: -500px;
-        margin-left: -623px;
+        margin-top: 180px;
+        margin-left: -23px;
         width: 340px;
         padding: 10px; /* Уменьшаем отступы для мобильных устройств */
         box-sizing: border-box; /* Учитываем отступы в ширине */
