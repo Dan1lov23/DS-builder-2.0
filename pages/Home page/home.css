@@ -9,7 +9,36 @@
     }
 }
 
+body {
+    height: 100%;
+}
+
 .bossStrikeButton {
     text-align: center;
     margin-top: 60px;
+}
+
+.openWeaponModal {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    button {
+        width: 110px;
+        height: 110px;
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+        transform: scale(1.2);
+    }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: 2550px;
+    }
 }
