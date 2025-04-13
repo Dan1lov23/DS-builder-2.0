@@ -141,6 +141,8 @@ export default function Home() {
         console.log("Резист босса -", resist);
     }, [resist])
 
+    const [armorResist, setArmorResist] = useState(0);
+
     return (
         <>
             <CharacterRedactor
@@ -158,6 +160,8 @@ export default function Home() {
             <ArmorList
                 helmResist={helmResist}
                 setHelmResist={setHelmResist}
+                armorResist={armorResist}
+                setArmorResist={setArmorResist}
             />
             <AddChest/>
             <Rings setImportRingName={setRingName}/>
