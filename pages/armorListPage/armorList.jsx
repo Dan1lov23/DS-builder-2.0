@@ -1,19 +1,20 @@
 import './armorList.css';
-
-import { useState, useEffect } from "react";
-
 import AddHelm from "../addHelm/AddHelm.jsx";
+import { useState, useEffect } from "react";
+import '../../components/Modal component/Modal.jsx'
+import RingsList from "../../components/rings list components/ring list component 1/RingsList.jsx";
 import Modal from "../../components/Modal component/Modal.jsx";
-import '../../components/armor list component/ChestsList.jsx'
+// import '../../components/armor list component/ChestsList.jsx'
 import ChestsList from "../../components/armor list component/ChestsList.jsx";
 
-function ArmorList({helmResist, setHelmResist}) {
+function ArmorList({helmResist, setHelmResist, armorResist, setArmorResist}) {
     const [importHelmSrc, setImportHelmSrc] = useState("");
     const [importHelmName, setImportHelmName] = useState("");
     const [importHelmResist, setImportHelmResist] = useState("");
 
     const [importChestName, setImportChestName] = useState("")
     const [importChestSrc, setImportChestSrc] = useState("");
+    const [importChestResist, setImportChestResist] = useState("");
 
     // для модального окна
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,20 +44,16 @@ function ArmorList({helmResist, setHelmResist}) {
         console.log("importChestSrc:", importChestSrc);
     }, [importChestSrc]);
 
-    let showCounter = 0;
+    useEffect(() => {
+        console.log("importArmorResist:", importChestResist);
+    }, [importChestResist]);
 
-    function show() {
-        const showHelmDiv = document.getElementById("showList");
-        if (showCounter % 2 === 0) {
-            showHelmDiv.style.display = "block";
-        } else {
-            showHelmDiv.style.display = "none";
-        }
-        showCounter++;
-    }
-
+    // резист для шлема
     helmResist = importHelmResist;
     setHelmResist(helmResist);
+    // резист длоя брони
+    armorResist = importChestResist;
+    setArmorResist(armorResist);
 
     return (
         <>
@@ -64,7 +61,7 @@ function ArmorList({helmResist, setHelmResist}) {
                 <AddHelm setImportHelmSrc={setImportHelmSrc} setImportHelmName={setImportHelmName} setImportHelmResist={setImportHelmResist}/>
             </Modal>
             <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
-                <ChestsList setImportChestName={setImportChestName} setImportChestSrc={setImportChestSrc}/>
+                <ChestsList setImportChestName={setImportChestName} setImportChestSrc={setImportChestSrc} setImportChestResist={setImportChestResist}/>
             </Modal>
             <div className="armourListMain">
                 <div className="armorListMainContainer">
