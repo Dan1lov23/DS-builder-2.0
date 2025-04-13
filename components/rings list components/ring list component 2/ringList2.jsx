@@ -5,7 +5,7 @@ export default function RingsList({setRingSrc, setRingName}) {
     const ringsArray = [
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4042.png", name: "Tiny Being's Ring"},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4004.png", name: "Cloranthy Ring"},
-        {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4000.png", name: "Havel`s Ring"},
+        {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4000.png", name: "Havel's Ring"},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4020.png", name: "Ring of Steel Protection"},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4007.png", name: "Spell Stoneplate Ring"},
         {src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/4005.png", name: "Flame Stoneplate Ring"},
