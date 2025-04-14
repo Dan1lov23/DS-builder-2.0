@@ -20,7 +20,12 @@ export default function Home() {
     const [dexterityImport, setDexterityImport] = useState(10);
     const [intelligenceImport, setIntelligenceImport] = useState(10);
     const [faithImport, setFaithImport] = useState(10);
+
+    // резисты от брони
     const [helmResist, setHelmResist] = useState(0);
+    const [chestResist, setChestResist] = useState(0);
+
+    // весь дамаг персонажа
     const [totalDamage, setTotalDamage] = useState(0);
 
     const [ringName, setRingName] = useState("");
@@ -155,6 +160,7 @@ export default function Home() {
                 faithImport={faithImport}
                 setFaithImport={setFaithImport}
                 helmResist={helmResist}
+                chestResist={armorResist}
                 totalDamage={totalDamage}
             />
             <ArmorList
