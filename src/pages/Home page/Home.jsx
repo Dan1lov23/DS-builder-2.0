@@ -5,9 +5,8 @@ import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
 import EquipList from "../equip list page/equipList.jsx";
 import ArmorList from "../armorListPage/armorList.jsx";
 import BossComponent from "../../components/bosses/boss component/BossComponent.jsx";
-import Rings from "../addRing/addRing.jsx";
-import AddChest from "../addChest/addChest.jsx";
-import Modal from "../../components/Modal component/Modal.jsx";
+import Rings from "../../components/rings/addRing/addRing.jsx";
+import Modal from "../../components/modal/Modal component/Modal.jsx";
 
 import { useState, useEffect } from "react";
 
@@ -169,7 +168,6 @@ export default function Home() {
                 armorResist={armorResist}
                 setArmorResist={setArmorResist}
             />
-            <AddChest/>
             <Rings setImportRingName={setRingName}/>
             <div className="openWeaponModal">
                 <button onClick={() => setIsModalOpen(true)}>

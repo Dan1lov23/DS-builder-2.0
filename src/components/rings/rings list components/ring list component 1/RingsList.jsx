@@ -1,5 +1,5 @@
 import './ringsList.css';
-import Modal from '../../Modal component/Modal.jsx'; // Импортируйте ваш компонент модального окна
+import Modal from '../../../modal/Modal component/Modal.jsx'; // Импортируйте ваш компонент модального окна
 
 export default function RingsList({ setRingSrc, setRingName }) {
 

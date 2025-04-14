@@ -1,12 +1,11 @@
 import './boss.css';
-import '../add boss component/AddBoss.jsx';
-import AddBosses from "../add boss component/AddBoss.jsx";
-import { useState, useEffect } from "react";
-import '../../Modal component/Modal.jsx';
-import Modal from "../../Modal component/Modal.jsx";
-import RingsList from "../../rings list components/ring list component 1/RingsList.jsx";
 
-export default function BossComponent({ setBossName, setBossSrc, setBossHp, setBossResist, setImportBossHp }) {
+import AddBosses from "../add boss component/AddBoss.jsx";
+import Modal from "../../modal/Modal component/Modal.jsx";
+
+import { useState, useEffect } from "react";
+
+export default function BossComponent({setBossResist, setImportBossHp }) {
     const [name, setName] = useState("");
     const [src, setSrc] = useState("");
     const [hp, setHp] = useState(0);
@@ -35,7 +34,6 @@ export default function BossComponent({ setBossName, setBossSrc, setBossHp, setB
                     <img src={src || defaultBossSrc} alt="" className="bossImg" />
                     <h1>{name}</h1>
                     <h1>{hp} HP</h1>
-
                 </div>
             </div>
         </>

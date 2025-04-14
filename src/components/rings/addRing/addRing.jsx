@@ -1,8 +1,8 @@
-import RingsList from '../../components/rings list components/ring list component 1/RingsList.jsx';
-import RingList2 from '../../components/rings list components/ring list component 2/ringList2.jsx';
+import RingsList from '../rings list components/ring list component 1/RingsList.jsx';
+import RingList2 from '../rings list components/ring list component 2/ringList2.jsx';
 import './addRing.css';
 import { useEffect, useState } from "react";
-import Modal from '../../components/Modal component/Modal.jsx'; // Импортируйте ваш компонент модального окна
+import Modal from '../../modal/Modal component/Modal.jsx'; // Импортируйте ваш компонент модального окна
 
 export default function Rings({setImportRingName}) {
     const [ringSrc, setRingSrc] = useState("");
