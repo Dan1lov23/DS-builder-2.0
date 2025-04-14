@@ -3,9 +3,9 @@ import './redactor.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, totalDamage}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, chestResist, totalDamage}) {
 
     const [level, setLevel] = useState(1);
     const [vitality, setVitality] = useState(10);
@@ -213,6 +213,13 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     faithImport = faith;
     setFaithImport(faithImport);
 
+
+    let totalResist = helmResist + chestResist;
+
+    useEffect(() => {
+        console.log(chestResist)
+    }, [chestResist])
+
     return (
         <>
             <div className="redactorMain">
@@ -253,7 +260,7 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                         </div>
                         <div className="stats">
                             <img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_phy.png"/>
-                            <span>Physical resist - {helmResist}</span>
+                            <span>Physical resist - {totalResist}</span>
                         </div>
                         <div className="stats">
                             <img src="https://image.pngaaa.com/450/291450-middle.png"/>
