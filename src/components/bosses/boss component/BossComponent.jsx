@@ -2,9 +2,9 @@ import './boss.css';
 import '../add boss component/AddBoss.jsx';
 import AddBosses from "../add boss component/AddBoss.jsx";
 import { useState, useEffect } from "react";
-import '../../components/Modal component/Modal.jsx';
-import Modal from "../Modal component/Modal.jsx";
-import RingsList from "../rings list components/ring list component 1/RingsList.jsx";
+import '../../Modal component/Modal.jsx';
+import Modal from "../../Modal component/Modal.jsx";
+import RingsList from "../../rings list components/ring list component 1/RingsList.jsx";
 
 export default function BossComponent({ setBossName, setBossSrc, setBossHp, setBossResist, setImportBossHp }) {
     const [name, setName] = useState("");

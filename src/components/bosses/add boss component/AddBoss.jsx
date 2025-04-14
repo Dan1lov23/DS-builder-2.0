@@ -2,18 +2,6 @@ import './addBosses.css'
 
 export default function AddBosses({setBossName, setBossSrc, setBossHp, setBossResist}) {
 
-    let showBossesCounter = 0;
-
-    function showBosses() {
-        const bossesList = document.getElementById('showBossesList');
-        if (showBossesCounter % 2 === 0) {
-            bossesList.style.display = 'block';
-        } else {
-            bossesList.style.display = 'none';
-        }
-        showBossesCounter++;
-    }
-
     // массивы с боссами
     const bosessArray = [
         {

@@ -1,0 +1,55 @@
+.chestMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.chestMainContanier {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.chests {
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 142px);
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    a {
+        font-size: 12px;
+        color: yellow;
+        text-decoration: none;
+    }
+    a:hover {
+        color: gold;
+        text-decoration: underline;
+    }
+}
+
+.chest {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.chest:hover {
+    transform: scale(1.4);
+}
+
+@media (max-width: 480px) {
+    .chest {
+        margin: 10px;
+        grid-template-columns: repeat(5, 60px);
+        img {
+            width: 50px;
+            height: 50px;
+        }
+        a {
+            font-size: 10px;
+        }
+    }
+}
+
