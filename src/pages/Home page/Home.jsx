@@ -1,17 +1,18 @@
 import './home.css';
 
-import CharacterRedactor from '../../components/character redactor/Redactor.jsx';
+import CharacterRedactor from '../../components/Charecter/character redactor/Redactor.jsx';
 import EquipAdd from '../../components/equip add component/EquipAdd.jsx';
-import EquipList from "../equip list page/equipList.jsx";
-import ArmorList from "../armorListPage/armorList.jsx";
+import EquipList from "../../components/Weapons/equip list page/equipList.jsx";
+import ArmorList from "../../components/Armor/armorListPage/armorList.jsx";
 import BossComponent from "../../components/bosses/boss component/BossComponent.jsx";
 import Rings from "../../components/rings/addRing/addRing.jsx";
 import Modal from "../../components/modal/Modal component/Modal.jsx";
+import AddCharacter from "../../components/Charecter/add character component/AddCharacter.jsx";
 
 import { useState, useEffect } from "react";
 
 export default function Home() {
-    const [userItem, setUserItem] = useState([]); // Инициализация состояния userItem как пустого массива
+    const [userItem, setUserItem] = useState([]);
     const [requirementsItem, setRequirementsItem] = useState([]);
 
     // Импортируем статы из компонента редактор
@@ -22,18 +23,17 @@ export default function Home() {
 
     // резисты от брони
     const [helmResist, setHelmResist] = useState(0);
-    const [chestResist, setChestResist] = useState(0);
 
     // весь дамаг персонажа
     const [totalDamage, setTotalDamage] = useState(0);
 
+    // хук для кольца
     const [ringName, setRingName] = useState("");
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
     useEffect(() => {
         console.log("Название кольца -", ringName);
     }, [ringName]);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // у каждого кольца будет уникальный бонус
     // реадлизую это с помощью конструкции switch....case
@@ -149,6 +149,7 @@ export default function Home() {
 
     return (
         <>
+            <AddCharacter/>
             <CharacterRedactor
                 strengthImport={strengthImport}
                 setStrengthImport={setStrengthImport}
