@@ -1,6 +1,6 @@
 import './addHelm.css';
 
-export default function AddHelm({ setImportHelmSrc, setImportHelmName, setImportHelmResist }) { // Убрал ненужный props importHelmSrc
+export default function HelmList({ setImportHelmSrc, setImportHelmName, setImportHelmResist }) { // Убрал ненужный props importHelmSrc
 
     const helmsArray = [
         // массив обьектов с парой ключ значение
