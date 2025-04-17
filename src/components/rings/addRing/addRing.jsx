@@ -34,7 +34,6 @@ export default function Rings({setImportRingName}) {
 
     return (
         <>
-            {/* Модальное окно для первого списка колец */}
             <Modal isOpen={isModalOpen1} onClose={() => setIsModalOpen1(false)}>
                 <RingsList setRingSrc={setRingSrc} setRingName={setRingName} />
             </Modal>
@@ -42,7 +41,6 @@ export default function Rings({setImportRingName}) {
             <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
                 <RingList2 setRingSrc={setRingSrc2} setRingName={setRingName2} />
             </Modal>
-
             <div className="showRingsMain">
                 <div className="showRingsMainContent">
                     <button onClick={() => setIsModalOpen1(true)}>
