@@ -147,9 +147,18 @@ export default function Home() {
 
     const [armorResist, setArmorResist] = useState(0);
 
+    // хуки переброски для статов разных классов
+    const [characterName, setCharacterName] = useState(0);
+    const [characterSrc, setCharacterSrc] = useState(0);
+    const [characterLevel, setCharacterLevel] = useState(0);
+
+    useEffect(() => {
+        console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterLevel);
+    }, [characterName]);
+
     return (
         <>
-            <AddCharacter/>
+            <AddCharacter chatacterClassName={characterName} setClassName={setCharacterName} setClassSrc={setCharacterSrc} setClassLevel={setCharacterLevel}/>
             <CharacterRedactor
                 strengthImport={strengthImport}
                 setStrengthImport={setStrengthImport}
