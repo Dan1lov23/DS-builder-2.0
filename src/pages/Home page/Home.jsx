@@ -15,7 +15,6 @@ export default function Home() {
     const [userItem, setUserItem] = useState([]);
     const [requirementsItem, setRequirementsItem] = useState([]);
 
-    // Импортируем статы из компонента редактор
     const [strengthImport, setStrengthImport] = useState(10);
     const [dexterityImport, setDexterityImport] = useState(10);
     const [intelligenceImport, setIntelligenceImport] = useState(10);
