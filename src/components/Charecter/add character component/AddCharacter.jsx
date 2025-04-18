@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 
-export default function AddCharacter() {
+export default function AddCharacter({chatacterClassName, setClassName, setClassSrc, setClassLevel, setClassAttutment, setClassVitality, setClassResist, setClassStrength, setClassDexterity, setClassIntelligence, setClassFaith}) {
 
     // хуки для резистов персов, прокидываю через компонент
 
@@ -22,7 +22,13 @@ export default function AddCharacter() {
 
     useEffect(() => {
         console.log(name, src, level, vitality, attunement, strength, dexterity, resist, intelligence, faith);
+        setClassSrc(src);
+        setClassLevel(level);
+        chatacterClassName = name;
+        setClassName(chatacterClassName);
+        console.log(setClassName, setClassLevel, setClassSrc);
     }, [name])
+
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
