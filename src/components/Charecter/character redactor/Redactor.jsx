@@ -4,14 +4,15 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 
 import {useEffect, useState} from "react";
+import AddCharacter from "../add character component/AddCharacter.jsx";
 
 export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, chestResist, totalDamage}) {
 
-    const [level, setLevel] = useState(1);
-    const [vitality, setVitality] = useState(10);
+    let [level, setLevel] = useState(1);
+    let [vitality, setVitality] = useState(10);
     const [attunement, setAttunement] = useState(10);
     const [endurance, setEndurance] = useState(10);
-    const [strength, setStrength] = useState(10);
+    let [strength, setStrength] = useState(10);
     const [dexterity, setDexterity] = useState(10);
     const [resistance, setResistance] = useState(10);
     const [intelligence, setIntelligence] = useState(10);
@@ -214,14 +215,40 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     setFaithImport(faithImport);
 
 
+    useEffect(() => {
+        console.log(strengthImport);
+    }, [strengthImport])
+
     let totalResist = helmResist + chestResist;
 
     useEffect(() => {
         console.log(chestResist)
     }, [chestResist])
 
+    const [characterName, setCharacterName] = useState(0);
+    const [characterSrc, setCharacterSrc] = useState(0);
+    const [characterLevel, setCharacterLevel] = useState(0);
+    const [characterVitality, setCharacterVitality] = useState(0);
+    const [characterAttutment, setCharacterAttutment] = useState(0);
+    const [characterResist, setCharacterResist] = useState(0);
+    const [characterStrength, setCharacterStrength] = useState(0);
+    const [characterDexterity, setCharacterDexterity] = useState(0);
+    const [characterIntelligence, setCharacterIntelligence] = useState(0);
+    const [characterFaith, setCharacterFaith] = useState(0);
+
+    useEffect(() => {
+        console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterVitality,
+            characterLevel, characterAttutment, characterResist, characterStrength, characterDexterity, characterIntelligence, characterFaith);
+        console.log(strengthImport);
+        setStrength(characterStrength);
+    }, [characterName]);
+
     return (
         <>
+            <AddCharacter setClassName={setCharacterName} setClassSrc={setCharacterSrc} setClassLevel={setCharacterLevel}
+                          setClassVitality={setCharacterVitality} setClassAttutment={setCharacterAttutment} setClassResist={setCharacterResist} classStrength={characterStrength} setClassStrength={setCharacterStrength}
+                          setClassDexterity={setCharacterDexterity} setClassIntelligence={setCharacterIntelligence} setClassFaith={setCharacterFaith}
+            />
             <div className="redactorMain">
                 <div className="redactorMainContent">
                     <div className="redactorCharacterName">
