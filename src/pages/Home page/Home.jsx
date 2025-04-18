@@ -16,7 +16,7 @@ export default function Home() {
     const [requirementsItem, setRequirementsItem] = useState([]);
 
     // Импортируем статы из компонента редактор
-    const [strengthImport, setStrengthImport] = useState(10);
+    let [strengthImport, setStrengthImport] = useState(10);
     const [dexterityImport, setDexterityImport] = useState(10);
     const [intelligenceImport, setIntelligenceImport] = useState(10);
     const [faithImport, setFaithImport] = useState(10);
@@ -148,17 +148,9 @@ export default function Home() {
     const [armorResist, setArmorResist] = useState(0);
 
     // хуки переброски для статов разных классов
-    const [characterName, setCharacterName] = useState(0);
-    const [characterSrc, setCharacterSrc] = useState(0);
-    const [characterLevel, setCharacterLevel] = useState(0);
-
-    useEffect(() => {
-        console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterLevel);
-    }, [characterName]);
 
     return (
         <>
-            <AddCharacter chatacterClassName={characterName} setClassName={setCharacterName} setClassSrc={setCharacterSrc} setClassLevel={setCharacterLevel}/>
             <CharacterRedactor
                 strengthImport={strengthImport}
                 setStrengthImport={setStrengthImport}
