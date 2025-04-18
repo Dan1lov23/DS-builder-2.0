@@ -6,7 +6,7 @@ import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 
 export default function AddCharacter({chatacterClassName, setClassName, setClassSrc, setClassLevel, setClassAttutment, setClassVitality, setClassResist, setClassStrength, setClassDexterity, setClassIntelligence, setClassFaith}) {
-
+//
     // хуки для резистов персов, прокидываю через компонент
 
     const [name, setName] = useState("");
