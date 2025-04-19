@@ -238,9 +238,6 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     const [characterEndurance, setCharacterEndurance] = useState(0);
 
     useEffect(() => {
-        console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterVitality,
-            characterLevel, characterAttutment, characterResist, characterStrength, characterDexterity, characterIntelligence, characterFaith);
-        console.log(strengthImport);
         setVitality(characterVitality);
         setResistance(characterResist);
         setAttunement(characterAttutment);
@@ -251,23 +248,27 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
         setDexterity(characterDexterity);
         setIntelligence(characterIntelligence);
         setFaith(characterFaith);
+        console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterVitality,
+            characterLevel, characterAttutment, characterResist, characterStrength, characterDexterity, characterIntelligence, characterFaith);
+        console.log("Статы персонажа после выбора класса - ", level, attunement, vitality, resistance, strength, dexterity, faith, intelligence);
     }, [characterName]);
 
     const defClassName = "none";
 
     return (
         <>
-            <AddCharacter setClassName={setCharacterName} setClassSrc={setCharacterSrc}
-                          setClassLevel={setCharacterLevel} setClassVitality={setCharacterVitality}
-                          setClassAttutment={setCharacterAttutment} setClassResist={setCharacterResist}
-                          classStrength={characterStrength} setClassStrength={setCharacterStrength}
-                          setClassDexterity={setCharacterDexterity} setClassIntelligence={setCharacterIntelligence}
-                          setClassFaith={setCharacterFaith} setClassEndurance={setCharacterEndurance}
-            />
             <div className="redactorMain">
                 <div className="redactorMainContent">
                     <div className="redactorCharacterName">
                         <input type="text" placeholder="Character Name"/>
+                        <AddCharacter setClassName={setCharacterName} setClassSrc={setCharacterSrc}
+                                      setClassLevel={setCharacterLevel} setClassVitality={setCharacterVitality}
+                                      setClassAttutment={setCharacterAttutment} setClassResist={setCharacterResist}
+                                      classStrength={characterStrength} setClassStrength={setCharacterStrength}
+                                      setClassDexterity={setCharacterDexterity}
+                                      setClassIntelligence={setCharacterIntelligence}
+                                      setClassFaith={setCharacterFaith} setClassEndurance={setCharacterEndurance}
+                        />
                     </div>
                     <div className="redactorStats">
                         {levelMain.map((stat) => (
@@ -283,7 +284,8 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                                 <img src={stat.href} alt={stat.signature}/>
                                 <button onClick={() => handleIncrease(stat.plus)}><FontAwesomeIcon icon={faPlus}/>
                                 </button>
-                                <button onClick={() => handleDecrease(stat.plus, stat.num)}><FontAwesomeIcon icon={faMinus}/>
+                                <button onClick={() => handleDecrease(stat.plus, stat.num)}><FontAwesomeIcon
+                                    icon={faMinus}/>
                                 </button>
                                 <span>{stat.signature}</span>
                                 <p>{stat.num}</p>
