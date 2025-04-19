@@ -20,12 +20,17 @@ body {
 
 .redactorCharacterName {
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 182px);
+    justify-items: center;
     input {
-        width: 150px;
-        margin: 10px;
+        text-align: center;
+        margin-left: 100px;
+        margin-top: 10px;
         border: black solid 2px;
         border-radius: 20px;
-        text-align: center;
+        width: 160px;
+        height: 30px;
     }
 }
 
