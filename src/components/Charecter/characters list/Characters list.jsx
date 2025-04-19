@@ -3,7 +3,7 @@ import './characterList.css';
 export default function CharacterList({setName, setSrc, setLevel, setVitality, setAttunement, setStrength, setDexterity, setResistance, setIntelligence, setFaith, setEndurance}) {
 
     // в массиве будут статы класса при старте игры
-    const charatersArray = [
+    const charactersArray = [
         {
             name: "Warrior", src: "https://darksouls.wiki.fextralife.com/file/Dark-Souls/warrior-starting-class-male-dark-souls.jpg",
             level: 4, vitality: 11, attunement: 8, strength: 13, dexterity: 13, resistance: 11, intelligence: 9, faith: 9, endurecne: 12,
@@ -64,7 +64,7 @@ export default function CharacterList({setName, setSrc, setLevel, setVitality, s
         <>
             <div className="charactersListMain">
                 <div className="charactersListMainContainer">
-                    {charatersArray.map((character, index) => (
+                    {charactersArray.map((character, index) => (
                         <div className="character" key={index} onClick={() => getCharacterStat(character.name, character.src, character.level, character.vitality, character.attunement, character.resistance, character.strength, character.dexterity, character.intelligence, character.faith, character.endurecne)}>
                             <img src={character.src} alt="character"/>
                             <a href={"https://darksouls.wiki.fextralife.com/" + character.name}>
