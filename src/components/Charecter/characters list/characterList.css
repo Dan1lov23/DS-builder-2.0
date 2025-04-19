@@ -12,9 +12,31 @@
         text-decoration: none;
         color: yellow;
     }
+    a:hover {
+        color: gold;
+        text-decoration: underline;
+    }
 }
 
 .character:hover {
     transform: scale(1.1);
     text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .charactersListMainContainer {
+        grid-template-columns: repeat(2, 162px);
+    }
+    .character {
+        transition: background-color 0.3s, transform 0.2s;
+        margin: 10px;
+        grid-template-columns: repeat(1, 10px);
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .character:hover {
+        transform: scale(1.1);
+    }
 }
