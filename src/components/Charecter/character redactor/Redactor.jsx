@@ -10,13 +10,13 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
 
     let [level, setLevel] = useState(1);
     let [vitality, setVitality] = useState(10);
-    const [attunement, setAttunement] = useState(10);
-    const [endurance, setEndurance] = useState(10);
+    let  [attunement, setAttunement] = useState(10);
+    let  [endurance, setEndurance] = useState(10);
     let [strength, setStrength] = useState(10);
-    const [dexterity, setDexterity] = useState(10);
-    const [resistance, setResistance] = useState(10);
-    const [intelligence, setIntelligence] = useState(10);
-    const [faith, setFaith] = useState(10);
+    let [dexterity, setDexterity] = useState(10);
+    let [resistance, setResistance] = useState(10);
+    let [intelligence, setIntelligence] = useState(10);
+    let [faith, setFaith] = useState(10);
     const [newLevelSouls, setNewLevelSouls] = useState(0);
 
     // массив стоимости новго повышения уровня персонажа
@@ -235,19 +235,34 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     const [characterDexterity, setCharacterDexterity] = useState(0);
     const [characterIntelligence, setCharacterIntelligence] = useState(0);
     const [characterFaith, setCharacterFaith] = useState(0);
+    const [characterEndurance, setCharacterEndurance] = useState(0);
 
     useEffect(() => {
         console.log("Пропсы выбора класса персонажа передались и рендерятся в главном компоненте:", characterName, characterSrc, characterVitality,
             characterLevel, characterAttutment, characterResist, characterStrength, characterDexterity, characterIntelligence, characterFaith);
         console.log(strengthImport);
+        setVitality(characterVitality);
+        setResistance(characterResist);
+        setAttunement(characterAttutment);
+        setEndurance(characterEndurance);
+        setLevel(characterLevel);
+        setResistance(characterResist);
         setStrength(characterStrength);
+        setDexterity(characterDexterity);
+        setIntelligence(characterIntelligence);
+        setFaith(characterFaith);
     }, [characterName]);
+
+    const defClassName = "none";
 
     return (
         <>
-            <AddCharacter setClassName={setCharacterName} setClassSrc={setCharacterSrc} setClassLevel={setCharacterLevel}
-                          setClassVitality={setCharacterVitality} setClassAttutment={setCharacterAttutment} setClassResist={setCharacterResist} classStrength={characterStrength} setClassStrength={setCharacterStrength}
-                          setClassDexterity={setCharacterDexterity} setClassIntelligence={setCharacterIntelligence} setClassFaith={setCharacterFaith}
+            <AddCharacter setClassName={setCharacterName} setClassSrc={setCharacterSrc}
+                          setClassLevel={setCharacterLevel} setClassVitality={setCharacterVitality}
+                          setClassAttutment={setCharacterAttutment} setClassResist={setCharacterResist}
+                          classStrength={characterStrength} setClassStrength={setCharacterStrength}
+                          setClassDexterity={setCharacterDexterity} setClassIntelligence={setCharacterIntelligence}
+                          setClassFaith={setCharacterFaith} setClassEndurance={setCharacterEndurance}
             />
             <div className="redactorMain">
                 <div className="redactorMainContent">
@@ -257,9 +272,10 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
                     <div className="redactorStats">
                         {levelMain.map((stat) => (
                             <div className="statsLevel" key={stat.signature}>
+                                <p>Start class - {characterName || defClassName}</p>
                                 <img src={stat.href} alt={stat.signature}/>
-                                <span>{stat.signature}</span>
-                                <span>{level}</span>
+                                <span>{stat.signature} </span>
+                                <span>- {level}</span>
                             </div>
                         ))}
                         {statsArray.map((stat) => (
