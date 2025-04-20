@@ -33,6 +33,16 @@
 
 @media (max-width: 480px) {
     .showRingsMainContent {
+        button {
+            width: 70px;
+            height: 70px;
+            img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    .showRingsMainContent {
         display: flex;
         justify-content: center;
         align-items: center;
