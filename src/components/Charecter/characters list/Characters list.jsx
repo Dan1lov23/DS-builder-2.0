@@ -65,7 +65,8 @@ export default function CharacterList({setName, setSrc, setLevel, setVitality, s
             <div className="charactersListMain">
                 <div className="charactersListMainContainer">
                     {charactersArray.map((character, index) => (
-                        <div className="character" key={index} onClick={() => getCharacterStat(character.name, character.src, character.level, character.vitality, character.attunement, character.resistance, character.strength, character.dexterity, character.intelligence, character.faith, character.endurecne)}>
+                        <div className="character" key={index}
+                             onClick={() => getCharacterStat(character.name, character.src, character.level, character.vitality, character.attunement, character.resistance, character.strength, character.dexterity, character.intelligence, character.faith, character.endurecne)}>
                             <img src={character.src} alt="character"/>
                             <a href={"https://darksouls.wiki.fextralife.com/" + character.name}>
                                 <p>{character.name}</p>
