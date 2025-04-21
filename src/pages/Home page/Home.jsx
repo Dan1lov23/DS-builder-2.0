@@ -17,12 +17,18 @@ export default function Home() {
 
     // Импортируем статы из компонента редактор
     let [strengthImport, setStrengthImport] = useState(10);
-    const [dexterityImport, setDexterityImport] = useState(10);
-    const [intelligenceImport, setIntelligenceImport] = useState(10);
-    const [faithImport, setFaithImport] = useState(10);
+    let  [dexterityImport, setDexterityImport] = useState(10);
+    let  [intelligenceImport, setIntelligenceImport] = useState(10);
+    let [faithImport, setFaithImport] = useState(10);
 
-    // резисты от брони
+    // резисты от шлема
     const [helmResist, setHelmResist] = useState(0);
+    //  резист от брони
+    const [armorResist, setArmorResist] = useState(0);
+    // резист от перчаток
+    const [gauntletResist, setGauntletResist] = useState(0);
+    // резист от поножей
+    const [leggingsResist, setLeggingsResist] = useState("");
 
     // весь дамаг персонажа
     const [totalDamage, setTotalDamage] = useState(0);
@@ -145,10 +151,6 @@ export default function Home() {
         console.log("Резист босса -", resist);
     }, [resist])
 
-    const [armorResist, setArmorResist] = useState(0);
-
-    // хуки переброски для статов разных классов
-
     return (
         <>
             <CharacterRedactor
@@ -162,6 +164,7 @@ export default function Home() {
                 setFaithImport={setFaithImport}
                 helmResist={helmResist}
                 chestResist={armorResist}
+                gauntletResist={gauntletResist}
                 totalDamage={totalDamage}
             />
             <ArmorList
@@ -169,6 +172,10 @@ export default function Home() {
                 setHelmResist={setHelmResist}
                 armorResist={armorResist}
                 setArmorResist={setArmorResist}
+                gauntletResist={setGauntletResist}
+                setGauntletResist={setGauntletResist}
+                leggingsResist={leggingsResist}
+                setLeggingsResist={setLeggingsResist}
             />
             <Rings setImportRingName={setRingName}/>
             <div className="openWeaponModal">
