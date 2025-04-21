@@ -6,23 +6,23 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import {useEffect, useState} from "react";
 import AddCharacter from "../add character component/AddCharacter.jsx";
 
-export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, chestResist, totalDamage}) {
+export default function CharacterRedactor({strengthImport, setStrengthImport, dexterityImport, setDexterityImport, intelligenceImport, setIntelligenceImport, faithImport, setFaithImport, helmResist, chestResist, gauntletResist, totalDamage}) {
 
     let [level, setLevel] = useState(1);
     let [vitality, setVitality] = useState(10);
-    let  [attunement, setAttunement] = useState(10);
-    let  [endurance, setEndurance] = useState(10);
+    let [attunement, setAttunement] = useState(10);
+    let [endurance, setEndurance] = useState(10);
     let [strength, setStrength] = useState(10);
     let [dexterity, setDexterity] = useState(10);
     let [resistance, setResistance] = useState(10);
     let [intelligence, setIntelligence] = useState(10);
     let [faith, setFaith] = useState(10);
-    const [newLevelSouls, setNewLevelSouls] = useState(0);
+    let [newLevelSouls, setNewLevelSouls] = useState(0);
 
     // массив стоимости новго повышения уровня персонажа
 
     const newLevelCostArray = [
-        // два нуля нужны чтобы при увелечении уровня правильно отображалось число душ нужных на повышение уровня
+        // два нуля нужны чтобы при увелечении уровня правильно отображалось число душ, нужных на повышение уровня
         0, 0, 673, 690, 707, 724, 741, 758, 775, 793, 811,
         829, 847, 1039, 1238, 1445, 1660, 1883, 2114, 2353, 2601,
         2857, 3122, 3396, 3678, 3970, 4271, 4581, 4900, 5229, 5567,
@@ -200,7 +200,7 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
     // дальше это будет применяться в модуле сравнение требований показателей оружия
     // и показаелей персонажа
 
-    // импррт статов в главный компонент Home
+    // импорт статов в главный компонент Home
 
     strengthImport = strength;
     setStrengthImport(strengthImport);
@@ -219,7 +219,7 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
         console.log(strengthImport);
     }, [strengthImport])
 
-    let totalResist = helmResist + chestResist;
+    let totalResist = helmResist + chestResist + gauntletResist;
 
     useEffect(() => {
         console.log(chestResist)
@@ -243,7 +243,6 @@ export default function CharacterRedactor({strengthImport, setStrengthImport, de
         setAttunement(characterAttutment);
         setEndurance(characterEndurance);
         setLevel(characterLevel);
-        setResistance(characterResist);
         setStrength(characterStrength);
         setDexterity(characterDexterity);
         setIntelligence(characterIntelligence);
