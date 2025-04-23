@@ -1,4 +1,5 @@
 import Home from '../pages/Home page/Home.jsx'
+import Portal from "../pages/portal page/Portal.jsx";
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -12,6 +13,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="*" element={<Home />}/>
+                    <Route path="/portal" element={<Portal />}/>
                 </Routes>
             </BrowserRouter>
         </>
